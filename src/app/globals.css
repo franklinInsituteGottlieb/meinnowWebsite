@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #3B82F6;
+  --color-primary-light: #DBEAFE;
+  --color-primary-dark: #1E40AF;
+  --color-accent: #1D4ED8;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F8FAFC;
+  --color-text: #1E293B;
+  --color-text-light: #64748B;
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-accent: var(--color-accent);
+  --color-background: var(--color-bg);
+  --color-background-alt: var(--color-bg-alt);
+  --color-foreground: var(--color-text);
+  --color-foreground-light: var(--color-text-light);
+  --font-sans: var(--font-space-grotesk);
+  --font-heading: var(--font-raleway);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-space-grotesk), system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-raleway), system-ui, -apple-system, sans-serif;
+}
+
+/* Subtle animation for elements entering viewport */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Hero background – schwebende Blobs (sichtbarer) */
+@keyframes heroFloat1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.65;
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+    opacity: 0.8;
+  }
+  66% {
+    transform: translate(-20px, 15px) scale(0.98);
+    opacity: 0.55;
+  }
+}
+
+@keyframes heroFloat2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-25px, -25px) scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+@keyframes heroFloat3 {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate(calc(-50% + 20px), calc(-50% - 15px)) scale(1.06);
+    opacity: 0.7;
+  }
+}
+
+/* CTA-Button – sanfte Pulse-Animation */
+@keyframes ctaPulse {
+  0%, 100% {
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.35), 0 8px 10px -6px rgba(59, 130, 246, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 20px 35px -5px rgba(59, 130, 246, 0.45), 0 10px 15px -6px rgba(59, 130, 246, 0.3);
+    transform: scale(1.02);
+  }
+}
+
+.cta-animate {
+  animation: ctaPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes heroGradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-bg-float-1 {
+  animation: heroFloat1 18s ease-in-out infinite;
+}
+
+.hero-bg-float-2 {
+  animation: heroFloat2 22s ease-in-out infinite;
+}
+
+.hero-bg-float-3 {
+  animation: heroFloat3 20s ease-in-out infinite;
+}
+
+.hero-bg-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(219, 234, 254, 0.45) 0%,
+    rgba(196, 181, 253, 0.18) 35%,
+    rgba(191, 219, 254, 0.5) 50%,
+    rgba(221, 214, 254, 0.2) 75%,
+    rgba(219, 234, 254, 0.4) 100%
+  );
+  background-size: 200% 200%;
+  animation: heroGradientShift 15s ease infinite;
+}
+
+/* Scroll-triggered animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate-fadeUp {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-animate-fadeUp.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate-fadeIn {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-animate-fadeIn.is-visible {
+  opacity: 1;
+}
+
+.scroll-animate-fadeLeft {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-animate-fadeLeft.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate-scale {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-animate-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Warum Forward Education – etwas längere, weichere Animation */
+#vorteile .scroll-animate-fadeUp {
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Bereit für den nächsten Schritt – gesamter Bereich kommt von unten */
+.cta-section-reveal.scroll-animate-fadeUp {
+  transform: translateY(72px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cta-section-reveal.scroll-animate-fadeUp.is-visible {
+  transform: translateY(0);
+}
+
+/* Footer: keine Animationen und keine Übergänge */
+footer,
+footer * {
+  animation: none !important;
+  transition: none !important;
+}
