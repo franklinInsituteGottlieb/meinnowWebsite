@@ -129,6 +129,7 @@ export default function CourseFinderSection() {
       }
 
       if (match.course_id) {
+        sessionStorage.setItem("meinnow_course_from_site", "1");
         const params = new URLSearchParams({
           course_id: match.course_id,
           utm_source: "meinnow-course",

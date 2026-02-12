@@ -182,8 +182,10 @@ export default async function CourseDetailPage({ params, searchParams }: PagePro
                     alt=""
                     fill
                     className="object-cover object-center"
-                    sizes="(max-width: 1024px) 0px, 50vw"
+                    sizes="(max-width: 1024px) 0px, 480px"
                     priority
+                    quality={80}
+                    fetchPriority="high"
                   />
                 </div>
               </div>

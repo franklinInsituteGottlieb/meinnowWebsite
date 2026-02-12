@@ -11,10 +11,15 @@ interface StoreMeinnowCourseProps {
   utmSource?: string;
 }
 
+const FROM_SITE_FLAG = "meinnow_course_from_site";
+
 export default function StoreMeinnowCourse({ course, courseId, utmSource }: StoreMeinnowCourseProps) {
   useEffect(() => {
     if (utmSource !== "meinnow-course") return;
+    if (typeof window === "undefined") return;
+    if (sessionStorage.getItem(FROM_SITE_FLAG) !== "1") return;
 
+    sessionStorage.removeItem(FROM_SITE_FLAG);
     const context: MeinnowCourseContext = {
       course_id: courseId,
       meinnow_course_id: course.uuid,
