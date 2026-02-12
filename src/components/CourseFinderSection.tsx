@@ -130,6 +130,11 @@ export default function CourseFinderSection() {
 
       if (match.course_id) {
         sessionStorage.setItem("meinnow_course_from_site", "1");
+        window.dispatchEvent(
+          new CustomEvent("website-log-search", {
+            detail: { query: raw, course_id: match.course_id },
+          })
+        );
         const params = new URLSearchParams({
           course_id: match.course_id,
           utm_source: "meinnow-course",
@@ -137,6 +142,11 @@ export default function CourseFinderSection() {
         if (raw) params.set("q", raw);
         router.push(`/course?${params.toString()}`);
       } else {
+        window.dispatchEvent(
+          new CustomEvent("website-log-search", {
+            detail: { query: raw, slug: match.slug },
+          })
+        );
         router.push(`/kurse/${match.slug}?q=${encodeURIComponent(raw)}`);
       }
     } catch {
