@@ -27,7 +27,11 @@ const TOPIC_ICONS: Record<string, React.ComponentType<{ size?: number; stroke?: 
 function TopicIcon({ icon }: { icon: string }) {
   const IconComponent = TOPIC_ICONS[icon];
   if (!IconComponent) return null;
-  return <IconComponent size={28} stroke={1.5} className="text-primary" />;
+  return (
+    <span className="text-primary">
+      <IconComponent size={28} stroke={1.5} />
+    </span>
+  );
 }
 
 const SEARCH_EXAMPLES = [
