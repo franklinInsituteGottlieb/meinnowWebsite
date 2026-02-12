@@ -106,6 +106,8 @@ export interface SiteConfig {
   };
   /** FAQ für Accordion */
   faq: FaqItemConfig[];
+  /** Page-Logs an Google Sheet (brand für page_logs-Sheet) */
+  tracking?: { brand: string };
 }
 
 /** Link für Bewerbung / Beratung (Typeform Kurzbewerbung) */
@@ -270,6 +272,7 @@ export const siteConfig: SiteConfig = {
         "Unsere Weiterbildungen richten sich an Berufseinsteiger:innen, Quereinsteiger:innen und Berufstätige, die sich in den Bereichen KI, Sales oder Projektmanagement qualifizieren möchten. Vorkenntnisse sind je nach Kurs unterschiedlich – wir beraten Sie gerne.",
     },
   ],
+  tracking: { brand: "meinnow" },
 };
 
 /** Dummy-Daten für Kursdetailseiten (später aus Datenbank) */

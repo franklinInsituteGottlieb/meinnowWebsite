@@ -6,8 +6,9 @@
 const BASE_URL = "https://app.franklin-institute.de/api-external/course-listings/getCourse";
 const HEADER_NAME = "x-api-key";
 
-function getApiKey(): string {
-  const encoded = process.env.FRANKLIN_API_KEY ?? "SkpTSEZFc2RmYmRqp1pSKEZaL0hKaUZkZmFzZGYzcQ==";
+function getApiKey(): string | null {
+  const encoded = process.env.FRANKLIN_API_KEY;
+  if (!encoded) return null;
   // Key als Latin1 decodieren (HTTP-Header erlauben nur Byte-Werte 0–255)
   return Buffer.from(encoded, "base64").toString("latin1");
 }
@@ -41,8 +42,13 @@ export interface FranklinCourseResponse {
 export async function getCourseById(courseId: string): Promise<FranklinCourseResponse | null> {
   if (!courseId) return null;
 
+  const apiKey = getApiKey();
+  if (!apiKey) {
+    console.warn("[Franklin API] FRANKLIN_API_KEY nicht gesetzt (siehe .env / .env.local)");
+    return null;
+  }
+
   try {
-    const apiKey = getApiKey();
     const url = `${BASE_URL}?id=${encodeURIComponent(courseId)}`;
     const response = await fetch(url, {
       headers: { [HEADER_NAME]: apiKey },

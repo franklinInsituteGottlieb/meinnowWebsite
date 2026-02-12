@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Raleway, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site.config";
+import PageLogTracker from "@/components/PageLogTracker";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -27,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body className={`${raleway.variable} ${spaceGrotesk.variable} antialiased`}>{children}</body>
+      <body className={`${raleway.variable} ${spaceGrotesk.variable} antialiased`}>
+        <PageLogTracker />
+        {children}
+      </body>
     </html>
   );
 }
