@@ -28,14 +28,14 @@ function isReferrerOurSite(): boolean {
 
 /**
  * Tracking nur, wenn der Nutzer von außen mit UTM Meinnow gekommen ist.
- * – Referrer = unsere Seite → nie Flag setzen, nie tracken (z. B. Suche → /course).
- * – Referrer = extern/leer + UTM Meinnow in URL → Flag setzen, ab dann Session tracken.
+ * – Referrer = unsere Seite → nie Flag setzen; wenn Flag schon gesetzt ist, Session weiter tracken.
+ * – Referrer = extern/leer + UTM Meinnow in URL → Flag setzen, ab dann ganze Session in page_log.
  */
 function shouldTrackPageLog(): boolean {
   if (typeof window === "undefined") return false;
 
   if (isReferrerOurSite()) {
-    return false;
+    return sessionStorage.getItem(ENTERED_VIA_MEINNOW_UTM_KEY) === "1";
   }
 
   if (hasMeinnowUtmInUrl()) {

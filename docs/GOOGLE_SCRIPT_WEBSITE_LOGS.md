@@ -1,5 +1,14 @@
 # Google Apps Script – Erweiterung für Website-Logs (internes Logging)
 
+## Übersicht: Welches Logging in welches Sheet?
+
+| Quelle | Sheet | Inhalt |
+|--------|--------|--------|
+| Nur wenn Nutzer **von außen** mit UTM Meinnow kommt | **page_logs** | brand, received_at, ts, session_id, course_id, meinnow_course_type, meinnow_course_duration |
+| **Internes** Website-Logging (immer) | **website_logs** | received_at, session_id, type (page_view / search / click), pathname, search_query, search_result_slug, search_result_course_id, click_href, click_text |
+
+---
+
 In deinem bestehenden Google Apps Script (Webhook doPost) folgende Änderungen vornehmen.
 
 ---
