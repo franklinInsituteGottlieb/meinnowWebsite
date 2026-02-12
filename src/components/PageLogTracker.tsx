@@ -2,10 +2,16 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { siteConfig } from "@/config/site.config";
 
 const SESSION_ID_KEY = "page_log_session_id";
 const STORAGE_KEY = "meinnow_course_context";
+
+/** Nur tracken, wenn utm_source meinnow ist (z. B. meinnow oder meinnow-course). */
+function hasMeinnowUtm(): boolean {
+  if (typeof window === "undefined") return false;
+  const utm = new URLSearchParams(window.location.search).get("utm_source") ?? "";
+  return utm.toLowerCase().includes("meinnow");
+}
 
 function getOrCreateSessionId(): string {
   if (typeof window === "undefined") return "";
@@ -54,11 +60,12 @@ export default function PageLogTracker() {
 
   useEffect(() => {
     if (!pathname) return;
+    if (!hasMeinnowUtm()) return;
+
     const key = pathname + "|" + (typeof window !== "undefined" ? window.location.search : "");
     if (sentRef.current === key) return;
     sentRef.current = key;
 
-    const brand = siteConfig.tracking?.brand ?? "meinnow";
     const session_id = getOrCreateSessionId();
     const url_course_id = getCourseIdFromUrl();
     const stored = getCourseContext();
@@ -66,7 +73,7 @@ export default function PageLogTracker() {
 
     const payload = {
       action: "track",
-      brand,
+      brand: "forward",
       ts: new Date().toISOString(),
       session_id,
       course_id,
