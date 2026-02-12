@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { siteConfig } from "@/config/site.config";
 
@@ -34,7 +36,7 @@ function CourseIcon({ icon }: { icon: string }) {
 
 export default function CoursesSection() {
   return (
-    <section id="kurse" className="relative py-24">
+    <section id="kurse" className="relative py-24 scroll-mt-28">
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header – von unten der Reihe nach, jedes Mal wenn Abschnitt geöffnet wird */}
         <div className="text-center mb-16">
@@ -60,57 +62,53 @@ export default function CoursesSection() {
         <div className="grid gap-8 md:grid-cols-3 md:items-stretch">
           {siteConfig.courses.map((course, index) => (
             <AnimateOnScroll key={course.title} animation="fadeUp" delay={index * 100} replayWhenInView className="h-full min-h-[320px]">
-            <div
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white/45 backdrop-blur-xl p-8 shadow-lg shadow-black/5 border border-white/40 hover:bg-white/60 hover:shadow-xl hover:border-white/50 hover:-translate-y-0.5 transition-all duration-300"
+            <Link
+              href={`/kurse/${course.slug}`}
+              className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white/45 backdrop-blur-xl shadow-lg shadow-black/5 border border-white/40 hover:bg-white/60 hover:shadow-xl hover:border-white/50 hover:-translate-y-0.5 transition-all duration-300 block p-0"
             >
-              {/* Icon */}
-              <div className="relative mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary-light text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                <CourseIcon icon={course.icon} />
+              {/* Oberer Bereich: Bild oder Platzhalter */}
+              <div className="relative h-64 w-full shrink-0 overflow-hidden rounded-t-2xl bg-slate-100">
+                {course.slug === "kuenstliche-intelligenz" ? (
+                  <Image
+                    src="/blackman.png"
+                    alt=""
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                ) : course.slug === "it-sales" ? (
+                  <Image
+                    src="/asian.png"
+                    alt=""
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                ) : course.slug === "projektmanagement" ? (
+                  <Image
+                    src="/schwarzeFrauMann.png"
+                    alt=""
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-foreground-light/40">
+                    <span className="text-sm font-medium">Bild</span>
+                  </div>
+                )}
               </div>
-
-              {/* Title */}
-              <h3 className="relative text-xl font-bold text-foreground mb-3">
-                {course.title}
-              </h3>
-
-              {/* Description */}
-              <p className="relative text-foreground-light leading-relaxed mb-6">
-                {course.description}
-              </p>
-
-              {/* Highlights */}
-              <ul className="relative space-y-2">
-                {course.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="flex items-center gap-2 text-sm text-foreground-light"
-                  >
-                    <svg
-                      className="h-4 w-4 text-primary shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2.5}
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Hover – Mehr erfahren */}
-              <div className="relative mt-auto pt-6 flex items-center gap-1 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                Mehr erfahren
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
+              <div className="flex flex-1 flex-col p-8 pt-6">
+                <h3 className="text-xl font-bold text-foreground mb-3">{course.title}</h3>
+                <p className="text-foreground-light leading-relaxed flex-1">{course.description}</p>
+                <div className="mt-auto pt-6 flex items-center gap-1 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                  Mehr erfahren
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </div>
               </div>
-            </div>
+            </Link>
             </AnimateOnScroll>
           ))}
         </div>

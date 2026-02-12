@@ -47,7 +47,7 @@ function BenefitIcon({ icon }: { icon: string }) {
 
 export default function BenefitsSection() {
   return (
-    <section id="vorteile" className="py-24">
+    <section id="vorteile" className="py-24 scroll-mt-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header – gestaffelt von oben nach unten, mit Replay beim Reinscrollen */}
         <div className="text-center mb-16">
