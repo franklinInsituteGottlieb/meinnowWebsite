@@ -146,6 +146,7 @@ export const siteConfig: SiteConfig = {
       icon: "brain",
       highlights: ["Machine Learning", "Prompt Engineering", "KI-Anwendungen"],
       searchKeywords: ["KI", "künstliche intelligenz", "machine learning", "prompt engineering", "AI", "Automatisierung", "AI & Automatisierung"],
+      apiCourseIds: [], // Franklin-UUID(s) eintragen, damit Suche und Kachel den echten Kurs aus der DB anzeigen
     },
     {
       slug: "it-sales",
@@ -154,8 +155,8 @@ export const siteConfig: SiteConfig = {
         "Verkaufe IT-Lösungen und Dienstleistungen erfolgreich. Lerne Vertriebsstrategien, technisches Verständnis und Kundenberatung – für eine Karriere im IT-Vertrieb.",
       icon: "sales",
       highlights: ["Vertriebsstrategien", "Technische Beratung", "Kundenakquise"],
-      searchKeywords: ["Sales", "IT-Sales", "Vertrieb", "Verkauf", "IT Vertrieb", "IT-Vertriebsmanager", "CRM", "CRM Spezialist", "Performance Marketing", "Google Ads"],
-      apiCourseIds: [], // Franklin-UUID(s) eintragen, z. B. für „Geschäftsmodelle Unternehmen - Kompetenzen“, damit die Suche exakt mit API-Titeln vergleicht
+      searchKeywords: ["Sales", "IT-Sales", "Vertrieb", "Verkauf", "IT Vertrieb", "IT-Vertriebsmanager", "CRM", "CRM Spezialist", "Performance Marketing", "Google Ads", "Geschäftsmodelle", "Geschäftsmodelle Unternehmen", "Unternehmen Kompetenzen"],
+      apiCourseIds: [], // Franklin-UUID(s) eintragen, z. B. für „Geschäftsmodelle Unternehmen - Kompetenzen“, damit der exakte DB-Titel angezeigt wird
     },
     {
       slug: "projektmanagement",

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCourseById } from "@/lib/franklin-api";
+import { jaccard, toWordSet } from "@/lib/text-similarity";
 import { siteConfig } from "@/config/site.config";
 
 /** Alle Franklin-Kurs-IDs für einen Kurs (apiCourseId + apiCourseIds) */
@@ -11,70 +12,31 @@ function getCourseApiIds(course: { apiCourseId?: string; apiCourseIds?: string[]
 }
 
 /**
- * Ein Kandidat = ein Franklin-Kurs (course_id) mit suchbarem Text.
- * So wird pro API-Kurs gescored (Schnittmenge mit Suchbegriff), bester Treffer = genau dieser Kurs.
+ * Kandidaten = Kacheln (Config-Kurse). Jeder Input wird mit jeder Kachel gematcht (Titel + searchKeywords + Slug).
+ * Bester Treffer = höchster Jaccard-Score. Bei allen 0 → „Kein passender Kurs“.
  */
-type Candidate = {
-  courseId: string;
+type TileCandidate = {
   slug: string;
-  searchable: string;
-  apiTitles: string[];
+  searchableText: string;
 };
 
-async function getCandidates(): Promise<Candidate[]> {
-  const candidates: Candidate[] = [];
-
-  for (const course of siteConfig.courses) {
-    const ids = getCourseApiIds(course);
-    const configParts = [
+function getTileCandidates(): TileCandidate[] {
+  return siteConfig.courses.map((course) => ({
+    slug: course.slug,
+    searchableText: [
       course.title,
       ...(course.searchKeywords ?? []),
       course.slug.replace(/-/g, " "),
-    ].filter(Boolean);
-
-    for (const id of ids) {
-      const data = await getCourseById(id);
-      if (!data?.success || !data.course) continue;
-      const apiTitles = [
-        data.course.title_readability_optimized,
-        data.course.title_keyword_optimized,
-      ];
-      const searchable = [...apiTitles, ...configParts].join(" ").toLowerCase();
-      candidates.push({
-        courseId: id,
-        slug: course.slug,
-        searchable,
-        apiTitles,
-      });
-    }
-
-    if (ids.length === 0) {
-      const searchable = configParts.join(" ").toLowerCase();
-      candidates.push({
-        courseId: "",
-        slug: course.slug,
-        searchable,
-        apiTitles: [],
-      });
-    }
-  }
-
-  return candidates;
-}
-
-/** Normalisiert für exakten Abgleich */
-function normalizeForMatch(s: string): string {
-  return s
-    .toLowerCase()
-    .replace(/[\s\-–—,;:.!?()]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+    ]
+      .filter(Boolean)
+      .join(" "),
+  }));
 }
 
 /**
  * GET /api/course-search?q=...
- * Vergleicht die Suchanfrage mit den Titeln aus der Franklin-API (Schnittmenge).
- * Bester Treffer = der konkrete Franklin-Kurs (course_id) → wird wie /course?course_id=... geladen.
+ * Jeder Input wird mit jeder Kachel gematcht (Titel + searchKeywords + Slug). Bester Treffer wird angezeigt.
+ * Sind alle Match-Scores 0 → „Kein passender Kurs gefunden“.
  */
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -86,49 +48,64 @@ export async function GET(request: Request) {
     );
   }
 
-  const queryWords = q.toLowerCase().split(/\s+/).filter(Boolean);
-  if (queryWords.length === 0) {
+  const querySet = toWordSet(q);
+  if (querySet.size === 0) {
     return NextResponse.json(
       { error: "Kein gültiger Suchbegriff" },
       { status: 400 }
     );
   }
 
-  const candidates = await getCandidates();
-  const normalizedQuery = normalizeForMatch(q);
-
-  const scored = candidates.map(({ courseId, slug, searchable, apiTitles }) => {
-    let score = queryWords.filter((w) => searchable.includes(w)).length;
-    const searchableNorm = normalizeForMatch(searchable);
-    if (normalizedQuery.length >= 3 && searchableNorm.includes(normalizedQuery)) {
-      score += 1000;
-    }
-    for (const apiTitle of apiTitles) {
-      if (normalizeForMatch(apiTitle).includes(normalizedQuery)) {
-        score += 500;
-        break;
-      }
-    }
-    return { courseId, slug, score };
-  });
+  const tiles = getTileCandidates();
+  const scored = tiles.map(({ slug, searchableText }) => ({
+    slug,
+    value: jaccard(querySet, toWordSet(searchableText)),
+  }));
 
   const best = scored.reduce(
-    (acc, cur) => (cur.score > acc.score ? cur : acc),
-    scored[0] ?? { courseId: "", slug: "", score: -1 }
+    (acc, cur) => (cur.value > acc.value ? cur : acc),
+    scored[0]
   );
 
-  if (best.score === 0) {
+  if (best.value === 0) {
     return NextResponse.json(
-      { match: null, message: "Kein passender Kurs gefunden." },
+      {
+        match: null,
+        message:
+          "Kein passender Kurs gefunden. Bitte Suchbegriff anpassen oder einen Bereich unten wählen.",
+      },
       { status: 200 }
     );
   }
 
-  const match: { course_id?: string; slug: string; score: number } = {
+  const course = siteConfig.courses.find((c) => c.slug === best.slug);
+  const ids = course ? getCourseApiIds(course) : [];
+  let course_id: string | undefined;
+  if (ids.length > 0) {
+    let bestApiScore = -1;
+    for (const id of ids) {
+      const data = await getCourseById(id);
+      if (!data?.success || !data.course) continue;
+      const apiTitle = [
+        data.course.title_readability_optimized,
+        data.course.title_keyword_optimized,
+      ]
+        .filter(Boolean)
+        .join(" ");
+      const s = jaccard(querySet, toWordSet(apiTitle));
+      if (s > bestApiScore) {
+        bestApiScore = s;
+        course_id = id;
+      }
+    }
+  }
+
+  const match: { course_id?: string; slug: string; score: number; title: string } = {
     slug: best.slug,
-    score: best.score,
+    score: best.value,
+    title: course?.title ?? best.slug,
   };
-  if (best.courseId) match.course_id = best.courseId;
+  if (course_id) match.course_id = course_id;
 
   return NextResponse.json({ match }, { status: 200 });
 }

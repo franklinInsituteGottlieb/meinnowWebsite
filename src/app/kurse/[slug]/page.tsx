@@ -7,6 +7,7 @@ import HeroFixedBackground from "@/components/HeroFixedBackground";
 import CourseDetailFaq from "@/components/CourseDetailFaq";
 import { siteConfig, courseDetailsBySlug } from "@/config/site.config";
 import { getCourseById } from "@/lib/franklin-api";
+import { jaccard, toWordSet } from "@/lib/text-similarity";
 
 function getCourseApiIds(course: { apiCourseId?: string; apiCourseIds?: string[] }): string[] {
   const ids: string[] = [];
@@ -43,27 +44,51 @@ function CourseIcon({ icon }: { icon: string }) {
 
 interface PageProps {
   params: Promise<{ slug: string }>;
-  searchParams?: Promise<{ q?: string }>;
+  searchParams?: Promise<{ q?: string; title?: string }>;
 }
 
 export async function generateMetadata({ params, searchParams }: PageProps) {
   const { slug } = await params;
-  const q = searchParams ? (await searchParams).q : undefined;
+  const resolved = searchParams ? await searchParams : undefined;
+  const q = resolved?.q;
+  const titleParam = resolved?.title;
   const course = siteConfig.courses.find((c) => c.slug === slug);
   if (!course) return { title: siteConfig.name };
-  let title = q ? decodeURIComponent(q).trim() : course.title;
-  let description = course.description;
+  let title = course.title;
+  if (q && titleParam) title = decodeURIComponent(titleParam);
+  const description = course.description;
   if (!q) {
     const ids = getCourseApiIds(course);
-    for (const id of ids) {
-      const data = await getCourseById(id);
-      if (data?.success && data?.course) {
-        title =
-          data.course.title_readability_optimized ||
-          data.course.title_keyword_optimized ||
-          course.title;
-        break;
+    if (ids.length > 0) {
+      const themeText = [
+        course.title,
+        ...(course.searchKeywords ?? []),
+        course.slug.replace(/-/g, " "),
+      ]
+        .filter(Boolean)
+        .join(" ");
+      const themeSet = toWordSet(themeText);
+      let bestScore = -1;
+      let bestTitle = course.title;
+      for (const id of ids) {
+        const data = await getCourseById(id);
+        if (!data?.success || !data?.course) continue;
+        const apiTitle = [
+          data.course.title_readability_optimized,
+          data.course.title_keyword_optimized,
+        ]
+          .filter(Boolean)
+          .join(" ");
+        const score = jaccard(themeSet, toWordSet(apiTitle));
+        if (score > bestScore) {
+          bestScore = score;
+          bestTitle =
+            data.course.title_readability_optimized ||
+            data.course.title_keyword_optimized ||
+            course.title;
+        }
       }
+      title = bestTitle;
     }
   }
   return {
@@ -79,30 +104,60 @@ export default async function CourseDetailPage({ params, searchParams }: PagePro
 
   if (!course || !detail) notFound();
 
-  const searchQuery = searchParams ? (await searchParams).q : undefined;
+  const searchParamsResolved = searchParams ? await searchParams : undefined;
+  const searchQuery = searchParamsResolved?.q;
+  const titleFromSearch = searchParamsResolved?.title;
 
   let displayTitle = course.title;
   let contentSections = detail.contentSections;
   const ids = getCourseApiIds(course);
 
-  if (searchQuery) {
-    displayTitle = decodeURIComponent(searchQuery).trim();
+  if (searchQuery && titleFromSearch) {
+    displayTitle = decodeURIComponent(titleFromSearch);
+  } else if (searchQuery) {
+    displayTitle = course.title;
   }
 
-  for (const id of ids) {
-    const data = await getCourseById(id);
-    if (data?.success && data?.course) {
+  if (ids.length > 0) {
+    const themeText = [
+      course.title,
+      ...(course.searchKeywords ?? []),
+      course.slug.replace(/-/g, " "),
+    ]
+      .filter(Boolean)
+      .join(" ");
+    const themeSet = toWordSet(themeText);
+
+    let bestScore = -1;
+    let bestCourse: Awaited<ReturnType<typeof getCourseById>> = null;
+
+    for (const id of ids) {
+      const data = await getCourseById(id);
+      if (!data?.success || !data?.course) continue;
+      const apiTitle = [
+        data.course.title_readability_optimized,
+        data.course.title_keyword_optimized,
+      ]
+        .filter(Boolean)
+        .join(" ");
+      const score = jaccard(themeSet, toWordSet(apiTitle));
+      if (score > bestScore) {
+        bestScore = score;
+        bestCourse = data;
+      }
+    }
+
+    if (bestCourse?.course) {
       if (!searchQuery) {
         displayTitle =
-          data.course.title_readability_optimized ||
-          data.course.title_keyword_optimized ||
+          bestCourse.course.title_readability_optimized ||
+          bestCourse.course.title_keyword_optimized ||
           course.title;
       }
-      contentSections = data.course.modules.map((m) => ({
+      contentSections = bestCourse.course.modules.map((m) => ({
         title: m.module_title,
         items: m.module_content,
       }));
-      break;
     }
   }
 

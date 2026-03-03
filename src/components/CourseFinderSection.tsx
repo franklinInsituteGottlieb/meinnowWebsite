@@ -140,6 +140,7 @@ export default function CourseFinderSection() {
           utm_source: "meinnow-course",
         });
         if (raw) params.set("q", raw);
+        if (match.title) params.set("title", match.title);
         router.push(`/course?${params.toString()}`);
       } else {
         window.dispatchEvent(
@@ -147,7 +148,10 @@ export default function CourseFinderSection() {
             detail: { query: raw, slug: match.slug },
           })
         );
-        router.push(`/kurse/${match.slug}?q=${encodeURIComponent(raw)}`);
+        const url = match.title
+          ? `/kurse/${match.slug}?q=${encodeURIComponent(raw)}&title=${encodeURIComponent(match.title)}`
+          : `/kurse/${match.slug}?q=${encodeURIComponent(raw)}`;
+        router.push(url);
       }
     } catch {
       setNoMatchMessage("Suche vorübergehend nicht möglich. Bitte später erneut versuchen.");

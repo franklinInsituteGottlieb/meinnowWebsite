@@ -13,13 +13,19 @@ import { getCourseById } from "@/lib/franklin-api";
 const defaultDetail = courseDetailsBySlug["projektmanagement"]!;
 
 interface PageProps {
-  searchParams?: Promise<{ course_id?: string; utm_source?: string }>;
+  searchParams?: Promise<{ course_id?: string; utm_source?: string; title?: string }>;
 }
 
 export async function generateMetadata({ searchParams }: PageProps) {
   const params = await searchParams;
   const courseId = params?.course_id;
   if (!courseId) return { title: siteConfig.name };
+  if (params?.title) {
+    return {
+      title: `${params.title} – ${siteConfig.name}`,
+      description: siteConfig.tagline,
+    };
+  }
   const data = await getCourseById(courseId);
   const title =
     data?.success && data?.course
@@ -44,6 +50,7 @@ export default async function CourseByIdPage({ searchParams }: PageProps) {
 
   const course = data.course;
   const displayTitle =
+    params?.title ||
     course.title_readability_optimized ||
     course.title_keyword_optimized ||
     "Kurs";

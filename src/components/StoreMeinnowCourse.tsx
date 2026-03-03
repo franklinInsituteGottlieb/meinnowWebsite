@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import type { MeinnowCourseContext } from "@/lib/typeform-url";
 
 const STORAGE_KEY = "meinnow_course_context";
+const FROM_SITE_FLAG = "meinnow_course_from_site";
+/** Session-Flag: nur gesetzt, wenn Nutzer von außen mit UTM Meinnow gekommen ist (nicht bei Google). */
+const ENTERED_VIA_MEINNOW_UTM_KEY = "page_log_entered_via_meinnow_utm";
 
 interface StoreMeinnowCourseProps {
   course: { uuid: string; vertical: string; duration: number };
@@ -11,13 +14,12 @@ interface StoreMeinnowCourseProps {
   utmSource?: string;
 }
 
-const FROM_SITE_FLAG = "meinnow_course_from_site";
-
 export default function StoreMeinnowCourse({ course, courseId, utmSource }: StoreMeinnowCourseProps) {
   useEffect(() => {
     if (utmSource !== "meinnow-course") return;
     if (typeof window === "undefined") return;
     if (sessionStorage.getItem(FROM_SITE_FLAG) !== "1") return;
+    if (sessionStorage.getItem(ENTERED_VIA_MEINNOW_UTM_KEY) !== "1") return;
 
     sessionStorage.removeItem(FROM_SITE_FLAG);
     const context: MeinnowCourseContext = {

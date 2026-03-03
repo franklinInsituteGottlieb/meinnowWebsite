@@ -34,11 +34,10 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 md:px-6 md:pt-5">
       <nav
-        className={`mx-auto max-w-7xl rounded-2xl border transition-all duration-300 ease-out ${
-          scrolled
+        className={`mx-auto max-w-7xl rounded-2xl border transition-all duration-300 ease-out ${scrolled
             ? "bg-white/90 backdrop-blur-xl shadow-lg shadow-black/5 border-slate-200/50"
             : "bg-white/45 backdrop-blur-xl shadow-lg shadow-black/5 border-white/40"
-        }`}
+          }`}
       >
         <div className="relative flex h-20 items-center justify-between px-5 sm:px-6 lg:px-8 py-1">
           {/* Logo */}
@@ -94,19 +93,16 @@ export default function Navbar() {
             aria-label="Menü öffnen"
           >
             <span
-              className={`block h-0.5 w-5 bg-foreground transition-transform duration-200 ${
-                mobileOpen ? "translate-y-2 rotate-45" : ""
-              }`}
+              className={`block h-0.5 w-5 bg-foreground transition-transform duration-200 ${mobileOpen ? "translate-y-2 rotate-45" : ""
+                }`}
             />
             <span
-              className={`block h-0.5 w-5 bg-foreground transition-opacity duration-200 ${
-                mobileOpen ? "opacity-0" : ""
-              }`}
+              className={`block h-0.5 w-5 bg-foreground transition-opacity duration-200 ${mobileOpen ? "opacity-0" : ""
+                }`}
             />
             <span
-              className={`block h-0.5 w-5 bg-foreground transition-transform duration-200 ${
-                mobileOpen ? "-translate-y-2 -rotate-45" : ""
-              }`}
+              className={`block h-0.5 w-5 bg-foreground transition-transform duration-200 ${mobileOpen ? "-translate-y-2 -rotate-45" : ""
+                }`}
             />
           </button>
         </div>
