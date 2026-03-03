@@ -261,7 +261,7 @@ export const siteConfig: SiteConfig = {
     {
       question: "Wer übernimmt die Kosten für die Weiterbildung?",
       answer:
-        "Unsere Kurse sind AZAV-zertifiziert. Bei Berechtigung übernehmen die Agentur für Arbeit oder das Jobcenter die Kosten zu 100 % über den Bildungsgutschein. Wir beraten Sie gerne zu Ihren Fördermöglichkeiten.",
+        "Unsere Kurse sind AZAV-zertifiziert. Mit dem Bildungsgutschein der Agentur für Arbeit können bis zu 100 % der Kosten übernommen werden. Wir beraten Dich gerne zu Deinen Fördermöglichkeiten.",
     },
     {
       question: "Kann ich online von zu Hause aus lernen?",

@@ -109,6 +109,9 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-slate-700/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <span>{siteConfig.footer.copyright}</span>
           <span className="flex gap-6">
+            <Link href="/kosten" className="hover:text-white text-slate-400">
+              Kosten & Förderung
+            </Link>
             <Link href="/impressum" className="hover:text-white text-slate-400">
               Impressum
             </Link>

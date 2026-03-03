@@ -11,33 +11,33 @@ import { siteConfig, courseDetailsBySlug } from "@/config/site.config";
 import { standorte } from "@/config/standorte.config";
 
 interface PageProps {
-  params: Promise<{ kurs: string; stadt: string }>;
+  params: Promise<{ slug: string; stadt: string }>;
 }
 
 export function generateStaticParams() {
   return siteConfig.courses.flatMap((c) =>
-    standorte.map((s) => ({ kurs: c.slug, stadt: s.slug }))
+    standorte.map((s) => ({ slug: c.slug, stadt: s.slug }))
   );
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { kurs, stadt } = await params;
-  const c = siteConfig.courses.find((x) => x.slug === kurs);
+  const { slug, stadt } = await params;
+  const c = siteConfig.courses.find((x) => x.slug === slug);
   const s = standorte.find((x) => x.slug === stadt);
   if (!c || !s) return { title: siteConfig.seoBrand };
   const base = siteConfig.siteUrl.replace(/\/$/, "");
   return {
     title: `${c.title} Weiterbildung in ${s.name} – Jetzt gefördert starten | ${siteConfig.seoBrand}`,
-    description: `${c.title} Weiterbildung in ${s.name}: In 3–6 Monaten bereit für den Job. AZAV-zertifiziert, 100 % kostenlos über den Bildungsgutschein der Agentur für Arbeit.`,
+    description: `${c.title} Weiterbildung in ${s.name}: In 3–6 Monaten bereit für den Job. AZAV-zertifiziert, bis zu 100 % förderbar über den Bildungsgutschein der Agentur für Arbeit.`,
     alternates: { canonical: `${base}/kurse/${c.slug}/${s.slug}` },
   };
 }
 
 export default async function KursStadtPage({ params }: PageProps) {
-  const { kurs, stadt } = await params;
-  const c = siteConfig.courses.find((x) => x.slug === kurs);
+  const { slug, stadt } = await params;
+  const c = siteConfig.courses.find((x) => x.slug === slug);
   const s = standorte.find((x) => x.slug === stadt);
-  const detail = courseDetailsBySlug[kurs];
+  const detail = courseDetailsBySlug[slug];
   if (!c || !s) notFound();
 
   const base = siteConfig.siteUrl.replace(/\/$/, "");
@@ -95,7 +95,7 @@ export default async function KursStadtPage({ params }: PageProps) {
               </span>
             ))}
             <span className="rounded-full bg-green-50 border border-green-200 text-green-700 px-4 py-2 text-sm font-semibold">
-              100 % förderbar
+              Bis zu 100 % förderbar
             </span>
             <span className="rounded-full bg-white border border-slate-200 shadow-sm text-foreground px-4 py-2 text-sm font-medium">
               AZAV-zertifiziert

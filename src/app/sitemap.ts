@@ -42,14 +42,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  const arbeitsagenturPages = standorte
-    .filter((s) => s.arbeitsagentur)
-    .map((s) => ({
-      url: `${base}/arbeitsagentur/${s.slug}`,
+  const standorteMitAgentur = standorte.filter((s) => s.arbeitsagentur);
+
+  const arbeitsagenturPages = standorteMitAgentur.map((s) => ({
+    url: `${base}/arbeitsagentur/${s.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
+  }));
+
+  const arbeitsagenturKursPages = standorteMitAgentur.flatMap((s) =>
+    siteConfig.courses.map((c) => ({
+      url: `${base}/arbeitsagentur/${s.slug}/${c.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.5,
-    }));
+    }))
+  );
 
   const ratgeberPages = ratgeberArticles.map((a) => ({
     url: `${base}/ratgeber/${a.slug}`,
@@ -67,7 +76,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...kursStandortPages,
     ...kursStadtInversePages,
     ...arbeitsagenturPages,
+    ...arbeitsagenturKursPages,
     ...ratgeberPages,
+    { url: `${base}/kosten`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/impressum`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
   ];
 }

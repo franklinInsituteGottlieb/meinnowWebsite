@@ -28,7 +28,6 @@ Ein Bildungsgutschein ist eine Zusicherung der Agentur für Arbeit oder des Jobc
 
 - **Arbeitssuchende**, die bei der Agentur für Arbeit oder dem Jobcenter gemeldet sind
 - **Von Arbeitslosigkeit bedrohte** Arbeitnehmer:innen
-- **Beschäftigte**, die sich im Rahmen des Qualifizierungschancengesetzes weiterbilden möchten
 - Voraussetzung: Eine individuelle Beratung durch die Agentur für Arbeit
 
 ## Wie beantragst Du den Bildungsgutschein?
@@ -42,10 +41,13 @@ Ein Bildungsgutschein ist eine Zusicherung der Agentur für Arbeit oder des Jobc
 ## Was wird gefördert?
 
 Der Bildungsgutschein deckt in der Regel ab:
-- Kursgebühren zu 100 %
+- Lehrgangsgebühren (bis zu 100 %)
 - Fahrtkosten
-- Kinderbetreuungskosten (in bestimmten Fällen)
-- Auswärtige Unterbringung (falls nötig)
+- Kinderbetreuungskosten
+- Auswärtige Unterbringung und Verpflegung (falls nötig)
+- Lernmittel und Prüfungsgebühren
+
+Welche Kosten in Deinem Fall übernommen werden, klärst Du im Beratungsgespräch mit der Agentur für Arbeit.
 
 ## Warum Forward Education?
 
@@ -180,7 +182,7 @@ AZAV steht für „Akkreditierungs- und Zulassungsverordnung Arbeitsförderung".
 Nur AZAV-zertifizierte Kurse können über den Bildungsgutschein finanziert werden. Die Zertifizierung garantiert:
 - **Qualitätsstandards** – Regelmäßige Prüfung der Lehrinhalte und Dozent:innen
 - **Anerkannte Abschlüsse** – Zertifikate werden von Arbeitgebern akzeptiert
-- **Förderungsfähigkeit** – 100 % Kostenübernahme durch die Agentur für Arbeit möglich
+- **Förderungsfähigkeit** – bis zu 100 % Kostenübernahme durch die Agentur für Arbeit möglich
 
 ## Was wird geprüft?
 
@@ -206,13 +208,7 @@ Eine Phase der Arbeitslosigkeit muss kein Stillstand sein. Mit einer geförderte
 ## Welche Förderungen gibt es?
 
 ### Bildungsgutschein
-Die wichtigste Förderung: Die Agentur für Arbeit oder das Jobcenter übernimmt die Kosten einer AZAV-zertifizierten Weiterbildung zu 100 %.
-
-### Weiterbildungsprämie
-Bei bestandener Zwischen- oder Abschlussprüfung erhältst Du eine Prämie von bis zu 1.500 €.
-
-### Arbeitslosengeld während der Weiterbildung
-Während einer geförderten Weiterbildung läuft Dein ALG I weiter – Du hast also kein finanzielles Risiko.
+Die wichtigste Förderung: Die Agentur für Arbeit kann mit dem Bildungsgutschein bis zu 100 % der Kosten einer AZAV-zertifizierten Weiterbildung übernehmen.
 
 ## Deine Rechte
 
@@ -338,40 +334,684 @@ Ein Sprint ist ein fester Zeitraum (meist 2 Wochen), in dem ein fertiges Inkreme
 In unserer Projektmanagement-Weiterbildung lernst Du Scrum von Grund auf – inklusive Praxis mit echten Projekten und Vorbereitung auf die Scrum-Zertifizierung.`,
   },
   {
-    slug: "qualifizierungschancengesetz",
-    title: "Qualifizierungschancengesetz – Weiterbildung für Beschäftigte",
+    slug: "bildungsgutschein-tipps-beratungsgespraech",
+    title: "Bildungsgutschein: Tipps für das Beratungsgespräch",
     description:
-      "Das Qualifizierungschancengesetz ermöglicht Weiterbildung für Berufstätige. Erfahre, wer profitiert und wie Du die Förderung beantragst.",
+      "So überzeugst Du im Beratungsgespräch bei der Agentur für Arbeit. Tipps für die Vorbereitung und häufige Fehler.",
     category: "foerderung",
-    content: `## Was ist das Qualifizierungschancengesetz?
+    content: `## Beratungsgespräch bei der Agentur für Arbeit: So bereitest Du Dich vor
 
-Seit 2019 ermöglicht das Qualifizierungschancengesetz auch Beschäftigten Zugang zu geförderter Weiterbildung – nicht nur Arbeitssuchenden. Ziel ist es, Arbeitnehmer:innen fit für den digitalen Wandel zu machen.
+Das Beratungsgespräch bei der Agentur für Arbeit ist der entscheidende Schritt zum Bildungsgutschein. Eine gute Vorbereitung erhöht Deine Chancen deutlich.
 
-## Wer profitiert?
+## Was Du mitbringen solltest
 
-- **Beschäftigte**, deren Tätigkeiten durch Digitalisierung oder Strukturwandel bedroht sind
-- **Arbeitnehmer:innen in KMUs** (kleine und mittlere Unternehmen)
-- **Geringqualifizierte**, die eine Berufsausbildung nachholen möchten
-- **Ältere Beschäftigte** (ab 45 Jahren)
+- **Konkretes Kursangebot** eines AZAV-zertifizierten Bildungsträgers (z. B. von Forward Education)
+- **Begründung**, warum die Weiterbildung Deine Jobchancen verbessert
+- **Lebenslauf** – zeigt Deinen bisherigen Werdegang und die Lücke, die Du schließen willst
+- **Stellenanzeigen** – zeige, dass es Jobs gibt, für die Du Dich mit der Weiterbildung qualifizierst
 
-## Wie hoch ist die Förderung?
+## Häufige Fehler vermeiden
 
-| Unternehmensgröße | Lehrgangskosten | Arbeitsentgelt |
-|-------------------|----------------|----------------|
-| Unter 10 Mitarbeiter | bis 100 % | bis 75 % |
-| 10–249 Mitarbeiter | bis 50 % | bis 50 % |
-| 250–2.499 Mitarbeiter | bis 25 % | bis 25 % |
-| Ab 2.500 Mitarbeiter | bis 15 % | bis 20 % |
+### Zu vage sein
+Sage nicht „Ich möchte mich weiterbilden". Sage stattdessen: „Ich möchte eine AZAV-zertifizierte Weiterbildung in Künstlicher Intelligenz bei Forward Education machen, um als KI-Anwendungsspezialist:in zu arbeiten."
 
-## So funktioniert es
+### Kein konkretes Angebot
+Ohne ein Kursangebot kann die Agentur nicht prüfen, ob die Weiterbildung förderfähig ist. Wir stellen Dir alle Unterlagen bereit.
 
-1. **Arbeitgeber und Arbeitnehmer:in** identifizieren gemeinsam den Weiterbildungsbedarf
-2. **Beratung** bei der Agentur für Arbeit (Arbeitgeber-Service)
-3. **Antrag stellen** – Arbeitgeber stellt den Förderantrag
-4. **Weiterbildung durchführen** – bei einem AZAV-zertifizierten Träger wie Forward Education
+### Arbeitsmarktbedarf nicht belegen
+Zeige, dass es Nachfrage gibt: Stellenanzeigen, Branchenberichte oder Gehaltsvergleiche untermauern Dein Argument.
 
-## Tipp für Beschäftigte
+## So hilft Forward Education
 
-Sprich deinen Arbeitgeber auf das Qualifizierungschancengesetz an. Viele Unternehmen wissen nicht, dass sie Fördermittel für die Weiterbildung ihrer Mitarbeiter:innen erhalten können.`,
+1. Wir erstellen Dir eine vollständige Maßnahmenübersicht mit AZAV-Nachweis
+2. Wir bereiten Dich auf das Gespräch vor
+3. Wir beantworten Rückfragen der Agentur für Arbeit
+4. Wir begleiten Dich vom Antrag bis zum Kursstart
+
+## Nächster Schritt
+
+Kontaktiere uns für eine kostenlose Beratung – wir helfen Dir, das Beratungsgespräch optimal vorzubereiten.`,
+  },
+
+  // ─── Neue Artikel ─────────────────────────────────────────────────────────
+
+  {
+    slug: "bildungsgutschein-abgelehnt",
+    title: "Bildungsgutschein abgelehnt – Was tun?",
+    description:
+      "Dein Bildungsgutschein wurde abgelehnt? Erfahre die häufigsten Gründe und welche Schritte Du jetzt unternehmen kannst.",
+    category: "bildungsgutschein",
+    content: `## Bildungsgutschein abgelehnt: Das kannst Du tun
+
+Eine Ablehnung ist ärgerlich, aber kein Grund aufzugeben. In vielen Fällen lässt sich die Entscheidung ändern.
+
+## Häufige Gründe für eine Ablehnung
+
+- **Fehlende Begründung** – Du konntest nicht überzeugend darlegen, warum die Weiterbildung Deine Jobchancen verbessert
+- **Kein konkretes Angebot** – Die Agentur braucht ein konkretes Kursangebot eines AZAV-zertifizierten Trägers
+- **Alternative Maßnahmen** – Die Agentur sieht andere Wege als geeigneter an (z. B. Vermittlung statt Weiterbildung)
+- **Formale Fehler** – Fehlende Unterlagen oder Fristen nicht eingehalten
+
+## Was Du jetzt tun kannst
+
+### 1. Widerspruch einlegen
+Du hast einen Monat Zeit, schriftlich Widerspruch gegen den Bescheid einzulegen. Begründe, warum die Weiterbildung für Deinen beruflichen Wiedereinstieg notwendig ist.
+
+### 2. Erneutes Beratungsgespräch
+Bitte um ein neues Gespräch mit einem/einer anderen Berater:in. Bereite Dich besser vor und bringe alle Unterlagen mit.
+
+### 3. Professionelle Unterstützung
+Wir helfen Dir kostenlos bei der Vorbereitung: Welche Argumente funktionieren, welche Unterlagen Du brauchst und wie Du den Bedarf überzeugend darstellst.
+
+## Tipp
+
+Lass Dich nicht entmutigen. Viele Teilnehmer:innen bei uns haben den Bildungsgutschein beim zweiten Anlauf erhalten – mit besserer Vorbereitung und den richtigen Argumenten.`,
+  },
+  {
+    slug: "bildungsgutschein-voraussetzungen",
+    title: "Bildungsgutschein Voraussetzungen – Wer hat Anspruch?",
+    description:
+      "Alle Voraussetzungen für den Bildungsgutschein: Wer Anspruch hat, welche Bedingungen gelten und wie Du Dich vorbereitest.",
+    category: "bildungsgutschein",
+    content: `## Wer bekommt einen Bildungsgutschein?
+
+Der Bildungsgutschein wird von der Agentur für Arbeit oder dem Jobcenter ausgestellt. Es gibt keinen Rechtsanspruch, aber klare Voraussetzungen, die Deine Chancen erhöhen.
+
+## Die wichtigsten Voraussetzungen
+
+### 1. Beschäftigungsstatus
+- Du bist arbeitslos und bei der Agentur für Arbeit gemeldet
+- Du bist arbeitssuchend (z. B. befristeter Vertrag läuft aus)
+- Du bist von Arbeitslosigkeit bedroht (Kündigung angekündigt oder wahrscheinlich)
+- Du brauchst die Weiterbildung, um eine Arbeitslosigkeit zu beenden oder zu vermeiden
+
+### 2. Beratungsgespräch
+Du musst ein Beratungsgespräch bei Deiner Agentur für Arbeit geführt haben. Dort besprichst Du Deinen Weiterbildungsbedarf.
+
+### 3. Notwendigkeit der Weiterbildung
+Die Weiterbildung muss Deine Chancen auf dem Arbeitsmarkt verbessern – entweder um eine Arbeitslosigkeit zu beenden oder zu vermeiden.
+
+### 4. AZAV-Zertifizierung
+Der Kurs muss bei einem AZAV-zertifizierten Bildungsträger stattfinden. Alle Kurse von Forward Education sind AZAV-zertifiziert.
+
+## Was spricht für eine Bewilligung?
+
+- Hohe Nachfrage in der Zielbranche (z. B. KI, IT-Sales, Projektmanagement)
+- Klarer Zusammenhang zwischen Kurs und beruflichem Ziel
+- Fehlende Qualifikation für den Wunschberuf
+- Bereitschaft, die Weiterbildung konsequent durchzuziehen
+
+## Was wird übernommen?
+
+| Kostenart | Übernahme |
+|-----------|-----------|
+| Lehrgangsgebühren | Bis zu 100 % |
+| Fahrtkosten | Ja |
+| Kinderbetreuung | Ja (auf Antrag) |
+| Unterbringung | Ja (falls nötig) |
+
+## Nächster Schritt
+
+Kontaktiere uns für eine kostenlose Beratung. Wir prüfen Deine Voraussetzungen und bereiten Dich auf das Gespräch mit der Agentur für Arbeit vor.`,
+  },
+  {
+    slug: "bildungsgutschein-gueltigkeitsdauer",
+    title: "Bildungsgutschein Gültigkeitsdauer – Was Du wissen musst",
+    description:
+      "Wie lange ist ein Bildungsgutschein gültig? Was passiert, wenn er abläuft? Alles zur Gültigkeitsdauer und Fristen.",
+    category: "bildungsgutschein",
+    content: `## Wie lange ist ein Bildungsgutschein gültig?
+
+Ein Bildungsgutschein ist in der Regel zeitlich befristet, regional begrenzt und auf ein bestimmtes Bildungsziel beschränkt. Die genaue Gültigkeitsdauer legt Deine Agentur für Arbeit im Beratungsgespräch fest.
+
+## Was steht im Bildungsgutschein?
+
+- **Bildungsziel** – Welche Art von Weiterbildung Du machen darfst (z. B. KI, Sales, Projektmanagement)
+- **Gültigkeitsdauer** – Bis wann Du die Weiterbildung beginnen musst
+- **Regionale Begrenzung** – In welcher Region die Weiterbildung stattfinden darf
+- **Dauer der Maßnahme** – Wie lange die Weiterbildung maximal dauern darf
+
+## Was passiert, wenn der Gutschein abläuft?
+
+Wenn Du den Bildungsgutschein nicht innerhalb der Gültigkeitsdauer einlöst, verfällt er. Du kannst aber erneut einen Termin bei der Agentur für Arbeit vereinbaren und einen neuen Gutschein beantragen.
+
+## Tipps zur Planung
+
+1. **Schnell handeln** – Informiere Dich frühzeitig über passende Kurse
+2. **Starttermine prüfen** – Stimme die Gültigkeitsdauer mit dem nächsten Kursstart ab
+3. **Rücksprache halten** – Bei Verzögerungen mit der Agentur sprechen, ggf. Verlängerung beantragen
+
+## Nächster Schritt
+
+Kontaktiere uns für eine kostenlose Beratung. Wir helfen Dir, den passenden Kurs innerhalb Deiner Gültigkeitsdauer zu finden und alle Unterlagen rechtzeitig einzureichen.`,
+  },
+  {
+    slug: "umschulung-mit-40",
+    title: "Umschulung mit 40 – Tipps für den Neustart",
+    description:
+      "Berufliche Neuorientierung mit 40+? Erfahre, warum es nie zu spät ist und wie Du den Umstieg erfolgreich meisterst.",
+    category: "karriere",
+    content: `## Umschulung mit 40: Warum es sich lohnt
+
+Mit 40+ hast Du noch mindestens 25 Berufsjahre vor Dir. Eine Umschulung kann der Start in eine erfüllende zweite Karrierehälfte sein – und in vielen Branchen bist Du mit Deiner Lebenserfahrung sogar besonders gefragt.
+
+## Vorteile einer Umschulung mit 40+
+
+- **Lebenserfahrung** – Soft Skills wie Verantwortungsbewusstsein und Stressresilienz sind im Berufsalltag Gold wert
+- **Klarheit** – Du weißt besser als mit 20, was Du willst und was nicht
+- **Netzwerk** – Du hast bereits berufliche Kontakte, die Dir beim Wiedereinstieg helfen
+- **Förderung** – Mit dem Bildungsgutschein kostet Dich die Umschulung keinen Cent
+
+## Gefragte Bereiche für Quereinsteiger:innen 40+
+
+### Projektmanagement
+Organisationstalent und Erfahrung in der Zusammenarbeit mit Teams sind hier Dein größter Vorteil. Scrum Master und Projektmanager:innen werden branchenübergreifend gesucht.
+
+### IT-Vertrieb (Sales)
+Beratungskompetenz und Kundenorientierung zählen mehr als technisches Wissen. Quereinsteiger:innen mit Berufserfahrung sind im IT-Sales sehr erfolgreich.
+
+### Künstliche Intelligenz
+KI-Anwendungsspezialist:innen müssen nicht programmieren können. Der Fokus liegt auf der Nutzung von KI-Tools im Geschäftsalltag – ein Bereich, in dem Praxiserfahrung zählt.
+
+## So startest Du Deine Umschulung
+
+1. Informiere Dich über passende Weiterbildungen
+2. Lass Dich bei der Agentur für Arbeit beraten
+3. Beantrage den Bildungsgutschein (wir helfen Dir bei der Vorbereitung)
+4. Starte Deine Weiterbildung – in 3–6 Monaten bist Du bereit
+
+## Häufige Bedenken – und warum sie unbegründet sind
+
+- **„Ich bin zu alt"** – Falsch. Unternehmen suchen Leute mit Erfahrung und Zuverlässigkeit.
+- **„Ich kann mir das nicht leisten"** – Mit dem Bildungsgutschein können bis zu 100 % der Kosten übernommen werden.
+- **„Technologie überfordert mich"** – Unsere Kurse starten bei null und sind für Quereinsteiger:innen konzipiert.`,
+  },
+  {
+    slug: "quereinsteiger-projektmanagement",
+    title: "Quereinsteiger Projektmanagement – Chancen und Wege",
+    description:
+      "Projektmanagement als Quereinsteiger:in? Erfahre, welche Wege es gibt und wie Du ohne Vorerfahrung einsteigst.",
+    category: "karriere",
+    content: `## Projektmanagement: Der perfekte Quereinstieg
+
+Projektmanagement ist einer der besten Bereiche für Quereinsteiger:innen. Warum? Organisationstalent, Kommunikation und Problemlösungsfähigkeit zählen mehr als ein bestimmtes Studium.
+
+## Warum Projektmanagement?
+
+- **Branchenübergreifend gefragt** – Jedes Unternehmen braucht Projektmanager:innen
+- **Gute Gehälter** – Einstiegsgehalt 40.000–50.000 €, mit Erfahrung 60.000–80.000 €
+- **Kein Fachstudium nötig** – Zertifizierungen (z. B. Scrum, PMP) sind oft wichtiger als der Studienabschluss
+- **Vielfältige Rollen** – Vom Scrum Master über Product Owner bis zum klassischen Projektleiter
+
+## Welche Skills brauchst Du?
+
+### Methodenkenntnisse
+- Agile Methoden: Scrum, Kanban
+- Klassisches Projektmanagement: Wasserfall, PRINCE2
+- Hybride Ansätze
+
+### Soft Skills
+- Kommunikation und Moderation
+- Priorisierung und Zeitmanagement
+- Konfliktmanagement
+- Stakeholder-Management
+
+### Tools
+- Jira, Asana, Trello, MS Project
+- Confluence, Miro
+- Slack, Teams
+
+## Dein Weg zum Projektmanager
+
+1. **Weiterbildung** – Unser Kurs vermittelt Dir alle Methoden, Tools und Soft Skills in 3–6 Monaten
+2. **Zertifizierung** – Scrum Master, Product Owner oder PMP – der Nachweis für Arbeitgeber
+3. **Praxis** – Projekte im Kurs und anschließend im Unternehmen
+4. **Karriereberatung** – Bewerbungscoaching und Jobvermittlung sind bei uns inklusive
+
+## Förderung
+
+Die Weiterbildung ist mit dem Bildungsgutschein bis zu 100 % förderbar. Wir beraten Dich kostenlos.`,
+  },
+  {
+    slug: "quereinsteiger-sales",
+    title: "Quereinsteiger im Vertrieb – So gelingt der Einstieg",
+    description:
+      "Sales als Quereinsteiger:in? Warum der IT-Vertrieb einer der besten Einstiege ist und wie Du ohne Erfahrung startest.",
+    category: "karriere",
+    content: `## Vertrieb als Quereinstieg: Warum gerade Sales?
+
+Der Vertrieb – insbesondere IT-Sales – ist einer der zugänglichsten und bestbezahlten Bereiche für Quereinsteiger:innen. Unternehmen suchen Persönlichkeiten, nicht Abschlüsse.
+
+## Warum IT-Sales?
+
+- **Hohe Gehälter** – Fixgehalt plus Provision, oft 50.000–80.000 € im ersten Jahr
+- **Keine Vorkenntnisse nötig** – Beratungskompetenz und Lernbereitschaft zählen
+- **Schneller Einstieg** – Nach 3–6 Monaten Weiterbildung bist Du einsatzbereit
+- **Karriereweg klar** – SDR → Account Executive → Team Lead → VP Sales
+
+## Typischer Karriereverlauf
+
+### 1. Sales Development Representative (SDR)
+Du identifizierst und qualifizierst potenzielle Kunden. Dein Werkzeug: Telefon, E-Mail und LinkedIn.
+
+### 2. Account Executive (AE)
+Du führst Verkaufsgespräche und schließt Deals ab. Hier steigt die variable Vergütung deutlich.
+
+### 3. Team Lead / Sales Manager
+Du führst ein Team und verantwortest Umsatzziele.
+
+## Was lernst Du in der Weiterbildung?
+
+- Sales-Methoden: SPIN Selling, Challenger Sale, MEDDIC
+- CRM-Systeme: Salesforce, HubSpot
+- Kommunikation und Verhandlung
+- Produkt- und Marktverständnis
+- Bewerbungstraining und Rollenspiele
+
+## Für wen ist Sales geeignet?
+
+- Du bist kommunikativ und magst den Kontakt mit Menschen
+- Du bist zielorientiert und lässt Dich von Rückschlägen nicht entmutigen
+- Du möchtest ein gutes Gehalt mit variablem Anteil
+- Du suchst einen klaren Karrierepfad mit schnellen Aufstiegsmöglichkeiten
+
+## Förderung
+
+Die Sales-Weiterbildung ist mit dem Bildungsgutschein bis zu 100 % förderbar. Kontaktiere uns für eine kostenlose Beratung.`,
+  },
+  {
+    slug: "berufe-mit-zukunft",
+    title: "Berufe mit Zukunft – Die gefragtesten Jobs",
+    description:
+      "Welche Berufe haben Zukunft? Die gefragtesten Karrierewege in KI, IT-Sales und Projektmanagement im Überblick.",
+    category: "karriere",
+    content: `## Berufe mit Zukunft: Diese Jobs sind gefragt
+
+Der Arbeitsmarkt verändert sich rasant. Digitalisierung, KI und neue Arbeitsmodelle schaffen Berufe, die es vor wenigen Jahren noch nicht gab. Wer sich jetzt positioniert, hat die besten Chancen.
+
+## Die drei gefragtesten Bereiche
+
+### 1. Künstliche Intelligenz
+KI durchdringt alle Branchen. Gefragt sind nicht nur Entwickler:innen, sondern vor allem Anwendungsspezialist:innen, Prompt Engineers und KI-Projektmanager:innen.
+
+- **Einstiegsgehalt:** 45.000–55.000 €
+- **Perspektive:** Wachstumsmarkt mit jährlich steigendem Bedarf
+- **Besonderheit:** Auch für Quereinsteiger:innen ohne IT-Hintergrund geeignet
+
+### 2. IT-Sales
+Jedes Tech-Unternehmen braucht Vertrieb. IT-Sales ist einer der bestbezahlten Einstiegsbereiche – mit klarem Karrierepfad und hoher variabler Vergütung.
+
+- **Einstiegsgehalt:** 40.000–50.000 € + Provision
+- **Perspektive:** Fachkräftemangel im tech-nahen Vertrieb
+- **Besonderheit:** Kommunikation zählt mehr als Technikwissen
+
+### 3. Projektmanagement
+Agiles Arbeiten ist Standard. Scrum Master, Product Owner und Projektmanager:innen werden in jedem Unternehmen gebraucht.
+
+- **Einstiegsgehalt:** 42.000–52.000 €
+- **Perspektive:** Branchenübergreifend nachgefragt
+- **Besonderheit:** Soft Skills und Methodenkompetenz stehen im Vordergrund
+
+## Was diese Berufe gemeinsam haben
+
+- Hohe Nachfrage auf dem Arbeitsmarkt
+- Gute Gehälter bereits beim Einstieg
+- Kein Fachstudium erforderlich
+- Einstieg über eine Weiterbildung in 3–6 Monaten möglich
+- Bis zu 100 % förderbar mit Bildungsgutschein
+
+## Dein nächster Schritt
+
+Informiere Dich über unsere AZAV-zertifizierten Weiterbildungen und lass Dich kostenlos beraten. Wir helfen Dir, den richtigen Karriereweg zu finden.`,
+  },
+  {
+    slug: "gehaltsvergleich-vor-nach-weiterbildung",
+    title: "Gehalt vor und nach der Weiterbildung – Lohnt es sich?",
+    description:
+      "Was verdienst Du nach einer Weiterbildung? Konkrete Gehaltsvergleiche in KI, Sales und Projektmanagement.",
+    category: "karriere",
+    content: `## Lohnt sich eine Weiterbildung finanziell?
+
+Kurze Antwort: Ja. Eine gezielte Weiterbildung kann Dein Gehalt um 30–100 % steigern – besonders beim Branchenwechsel.
+
+## Gehaltsvergleich: Vorher vs. Nachher
+
+### Künstliche Intelligenz
+
+| Situation | Gehalt (brutto/Jahr) |
+|-----------|---------------------|
+| Ohne KI-Kompetenz | 25.000–35.000 € |
+| Nach KI-Weiterbildung (Einstieg) | 45.000–55.000 € |
+| Mit 2–3 Jahren KI-Erfahrung | 60.000–80.000 € |
+
+### IT-Sales
+
+| Situation | Gehalt (brutto/Jahr) |
+|-----------|---------------------|
+| Ohne Sales-Erfahrung | 25.000–35.000 € |
+| Nach Sales-Weiterbildung (SDR) | 40.000–55.000 € (+ Provision) |
+| Account Executive (2–3 Jahre) | 65.000–100.000 € (inkl. Provision) |
+
+### Projektmanagement
+
+| Situation | Gehalt (brutto/Jahr) |
+|-----------|---------------------|
+| Ohne PM-Qualifikation | 28.000–38.000 € |
+| Nach PM-Weiterbildung (Einstieg) | 42.000–52.000 € |
+| Senior PM / Scrum Master (3+ Jahre) | 60.000–80.000 € |
+
+## Was beeinflusst den Gehaltssprung?
+
+- **Branche** – Tech und Beratung zahlen am besten
+- **Region** – Großstädte wie München, Frankfurt und Berlin liegen vorn
+- **Zertifizierung** – Anerkannte Zertifikate (Scrum, Google, etc.) steigern den Marktwert
+- **Verhandlung** – Wer gut verhandelt, verdient mehr
+
+## Die Rechnung: Investition vs. Ertrag
+
+- **Kosten der Weiterbildung:** 0 € (mit Bildungsgutschein)
+- **Dauer:** 3–6 Monate
+- **Gehaltsplus:** Durchschnittlich 15.000–30.000 € pro Jahr
+- **Amortisation:** Sofort, da Du nichts investiert hast
+
+## Fazit
+
+Eine Weiterbildung mit Bildungsgutschein ist eine der sichersten Investitionen in Deine Karriere: kein finanzielles Risiko, hoher potenzieller Ertrag.`,
+  },
+  {
+    slug: "online-weiterbildung-vorteile",
+    title: "Online-Weiterbildung: Vorteile und Tipps",
+    description:
+      "Online lernen oder vor Ort? Die Vorteile einer Online-Weiterbildung und Tipps, wie Du das Beste daraus machst.",
+    category: "weiterbildung",
+    content: `## Warum Online-Weiterbildung?
+
+Online-Weiterbildung ist längst kein Kompromiss mehr – sie bietet echte Vorteile gegenüber dem Präsenzunterricht. Gerade für Berufswechsler:innen und Menschen in Umbruchsituationen ist Flexibilität entscheidend.
+
+## Die Vorteile im Überblick
+
+### Flexibilität
+- Lerne von zu Hause aus – kein Pendeln, keine Anfahrtskosten
+- Teilnahme von überall in Deutschland möglich
+- Auch aus kleineren Städten Zugang zu Top-Weiterbildungen
+
+### Qualität
+- Live-Unterricht mit echten Dozent:innen (kein reines Selbststudium)
+- Kleine Gruppen (max. 15 Teilnehmer:innen)
+- Direktes Feedback und individuelle Betreuung
+
+### Kosteneffizienz
+- Kein Umzug nötig
+- Keine Unterbringungskosten
+- Mit Bildungsgutschein komplett kostenlos
+
+### Technik
+- Modernes virtuelles Klassenzimmer
+- Bei Forward Education: MacBook inklusive
+- Professionelle Tools und Plattformen
+
+## Tipps für erfolgreiches Online-Lernen
+
+1. **Fester Arbeitsplatz** – Richte Dir einen ruhigen Platz ein, an dem Du konzentriert lernen kannst
+2. **Tagesstruktur** – Behandle die Weiterbildung wie einen normalen Job mit festen Zeiten
+3. **Aktiv teilnehmen** – Fragen stellen, Kamera an, mitmachen
+4. **Pausen einplanen** – Bildschirmzeit braucht Pausen
+5. **Austausch suchen** – Nutze Slack, Teams oder Lerngruppen für den Kontakt mit Mitlernenden
+
+## Für wen eignet sich Online-Weiterbildung?
+
+- Eltern, die zeitlich flexibel sein müssen
+- Personen in ländlichen Regionen ohne lokale Bildungsangebote
+- Menschen, die während der Weiterbildung zu Hause bleiben möchten
+- Alle, die eine moderne Lernumgebung bevorzugen
+
+## Online lernen bei Forward Education
+
+Unsere Kurse in KI, Sales und Projektmanagement finden komplett online statt – im Live-Unterricht mit persönlicher Betreuung. Bis zu 100 % förderbar mit Bildungsgutschein.`,
+  },
+  {
+    slug: "weiterbildung-lebenslauf",
+    title: "Weiterbildung im Lebenslauf – So präsentierst Du sie richtig",
+    description:
+      "Wie stellst Du eine Weiterbildung im Lebenslauf dar? Tipps für eine überzeugende Bewerbung nach der Weiterbildung.",
+    category: "weiterbildung",
+    content: `## Weiterbildung im Lebenslauf: Der richtige Platz
+
+Eine abgeschlossene Weiterbildung gehört prominent in Deinen Lebenslauf. Sie zeigt Engagement, Lernbereitschaft und aktuelle Qualifikation.
+
+## Wo im Lebenslauf?
+
+### Option 1: Eigener Abschnitt „Weiterbildung"
+Am besten direkt nach „Berufserfahrung". Das signalisiert: Du hast Dich aktiv weiterentwickelt.
+
+### Option 2: Im Abschnitt „Bildung"
+Wenn Du noch wenig Berufserfahrung hast, kann die Weiterbildung als letzter Bildungsabschnitt stehen.
+
+## So formulierst Du es
+
+**Gut:**
+- Weiterbildung Projektmanagement (AZAV-zertifiziert), Forward Education, 01/2026–06/2026
+- Schwerpunkte: Agile Methoden (Scrum, Kanban), Stakeholder-Management, Praxisprojekte
+
+**Schlecht:**
+- Kurs gemacht bei Forward Education
+
+## Was gehört dazu?
+
+- Name der Weiterbildung
+- Zeitraum (Monat/Jahr – Monat/Jahr)
+- Bildungsträger
+- Zertifizierung (AZAV, Scrum Master, etc.)
+- 2–3 konkrete Schwerpunkte oder Kompetenzen
+
+## Tipps für das Anschreiben
+
+- Erkläre kurz, warum Du Dich für die Weiterbildung entschieden hast
+- Stelle den Bezug zum angestrebten Job her
+- Betone praktische Projekte und konkrete Skills
+
+## Lücke im Lebenslauf? Kein Problem
+
+Eine Weiterbildung schließt Lücken im Lebenslauf. Statt einer unerklärten Pause zwischen zwei Jobs zeigst Du, dass Du die Zeit aktiv genutzt hast.
+
+## Tipp
+
+Bei Forward Education bekommst Du nicht nur die Weiterbildung, sondern auch Bewerbungscoaching und Karriereberatung – damit Dein Lebenslauf und Deine Bewerbung überzeugen.`,
+  },
+  {
+    slug: "ki-tools-im-beruf",
+    title: "KI-Tools im Beruf – Diese solltest Du kennen",
+    description:
+      "Die wichtigsten KI-Tools für den Berufsalltag: Von ChatGPT über Midjourney bis hin zu Automatisierungstools.",
+    category: "weiterbildung",
+    content: `## KI-Tools, die Deinen Berufsalltag verändern
+
+Künstliche Intelligenz ist nicht mehr nur etwas für Tech-Unternehmen. KI-Tools helfen in fast jedem Beruf – von Textgenerierung über Datenanalyse bis zur Automatisierung.
+
+## Die wichtigsten KI-Tools im Überblick
+
+### Textgenerierung & Kommunikation
+- **ChatGPT / Claude** – Texte schreiben, E-Mails formulieren, Brainstorming
+- **Jasper** – Marketing-Texte und Content erstellen
+- **DeepL** – Professionelle Übersetzungen
+
+### Bildgenerierung & Design
+- **Midjourney / DALL-E** – Bilder aus Textbeschreibungen generieren
+- **Canva AI** – Design-Vorschläge und automatische Layoutanpassung
+- **Remove.bg** – Hintergründe automatisch entfernen
+
+### Datenanalyse
+- **Julius AI** – Datenanalyse im Chat-Format
+- **ChatGPT Code Interpreter** – Datenvisualisierung und Statistik
+- **Tableau mit KI** – Business Intelligence mit KI-Unterstützung
+
+### Automatisierung
+- **Zapier AI** – Workflows zwischen Apps automatisieren
+- **Make (Integromat)** – Komplexe Automatisierungen erstellen
+- **Microsoft Copilot** – KI in Word, Excel, PowerPoint, Outlook
+
+### Produktivität
+- **Notion AI** – Notizen zusammenfassen, Aufgaben organisieren
+- **Otter.ai** – Meetings transkribieren und zusammenfassen
+- **Grammarly** – Texte korrigieren und verbessern
+
+## Welche KI-Kompetenz braucht der Arbeitsmarkt?
+
+Unternehmen suchen Mitarbeiter:innen, die:
+- KI-Tools sicher anwenden können
+- Wissen, welches Tool für welche Aufgabe passt
+- Ergebnisse kritisch bewerten können
+- Workflows mit KI-Unterstützung optimieren
+
+## KI-Kompetenz aufbauen
+
+In unserer KI-Weiterbildung lernst Du den professionellen Umgang mit KI-Tools, Prompt Engineering und die strategische Nutzung von KI im Unternehmen. AZAV-zertifiziert und bis zu 100 % förderbar.`,
+  },
+  {
+    slug: "prompt-engineering-lernen",
+    title: "Prompt Engineering lernen – Grundlagen und Praxis",
+    description:
+      "Was ist Prompt Engineering? Lerne die Grundlagen und wie Du KI-Modelle mit den richtigen Prompts steuerst.",
+    category: "weiterbildung",
+    content: `## Was ist Prompt Engineering?
+
+Prompt Engineering ist die Kunst, KI-Modelle wie ChatGPT, Claude oder Gemini mit gezielten Eingaben (Prompts) zu den besten Ergebnissen zu führen. Es ist eine der gefragtesten neuen Kompetenzen auf dem Arbeitsmarkt.
+
+## Warum ist Prompt Engineering wichtig?
+
+Ein guter Prompt kann den Unterschied machen zwischen einer mittelmäßigen und einer hervorragenden KI-Antwort. Unternehmen brauchen Mitarbeiter:innen, die KI-Tools effizient einsetzen können.
+
+## Grundlagen: So schreibst Du bessere Prompts
+
+### 1. Sei spezifisch
+- **Schlecht:** „Schreib mir einen Text über Marketing"
+- **Gut:** „Schreib einen 300-Wort-Blogbeitrag über Social-Media-Marketing für B2B-Startups. Zielgruppe: Marketing-Manager:innen. Ton: professionell, aber zugänglich."
+
+### 2. Gib Kontext
+Erkläre der KI, wer Du bist, was Du brauchst und für wen das Ergebnis bestimmt ist.
+
+### 3. Nutze Rollen
+„Du bist ein erfahrener Projektmanager. Erstelle einen Sprint-Plan für…"
+
+### 4. Iteriere
+Der erste Prompt ist selten perfekt. Verfeinere ihn Schritt für Schritt.
+
+### 5. Nutze Beispiele (Few-Shot-Prompting)
+Zeige der KI ein Beispiel für das gewünschte Ergebnis, bevor Du die eigentliche Aufgabe gibst.
+
+## Fortgeschrittene Techniken
+
+- **Chain-of-Thought** – Die KI Schritt für Schritt denken lassen
+- **System-Prompts** – Grundlegende Anweisungen, die das Verhalten steuern
+- **Output-Formatierung** – JSON, Tabellen, Markdown anfordern
+- **Retrieval-Augmented Generation (RAG)** – KI mit eigenen Daten erweitern
+
+## Berufsbild Prompt Engineer
+
+| Aspekt | Details |
+|--------|---------|
+| Einstiegsgehalt | 45.000–55.000 € |
+| Erfahrung (3+ Jahre) | 65.000–90.000 € |
+| Branchen | Tech, Beratung, Marketing, Medien |
+| Voraussetzung | KI-Verständnis, analytisches Denken |
+
+## Prompt Engineering lernen bei Forward Education
+
+In unserer KI-Weiterbildung ist Prompt Engineering ein zentrales Modul. Du lernst von den Grundlagen bis zu fortgeschrittenen Techniken – mit Praxis an echten Use Cases.`,
+  },
+  {
+    slug: "agiles-arbeiten-kanban-scrum",
+    title: "Agiles Arbeiten: Kanban vs. Scrum im Vergleich",
+    description:
+      "Kanban oder Scrum – was ist besser? Ein Vergleich der beiden beliebtesten agilen Methoden für Einsteiger.",
+    category: "weiterbildung",
+    content: `## Scrum vs. Kanban: Zwei Wege zum agilen Arbeiten
+
+Scrum und Kanban sind die beliebtesten agilen Methoden. Beide verbessern die Zusammenarbeit und Effizienz – aber auf unterschiedliche Weise.
+
+## Scrum im Überblick
+
+- **Feste Sprints** – Zeitboxen von 1–4 Wochen
+- **Definierte Rollen** – Product Owner, Scrum Master, Development Team
+- **Regelmäßige Events** – Planning, Daily, Review, Retrospective
+- **Lieferung am Sprint-Ende** – Fertiges Inkrement nach jedem Sprint
+
+### Wann Scrum?
+- Produktentwicklung mit planbaren Releases
+- Teams, die Struktur und klare Rollen brauchen
+- Projekte mit fester Deadline und Scope
+
+## Kanban im Überblick
+
+- **Kontinuierlicher Fluss** – Keine festen Sprints, Aufgaben fließen durch das System
+- **Work-in-Progress-Limits (WIP)** – Begrenzung gleichzeitiger Aufgaben
+- **Visuelles Board** – Spalten wie „To Do", „In Progress", „Done"
+- **Keine festen Rollen** – Flexibler als Scrum
+
+### Wann Kanban?
+- Support-Teams und Wartung
+- Aufgaben, die nicht in Sprints passen
+- Teams, die einen sanften Einstieg in Agilität suchen
+
+## Direkter Vergleich
+
+| Merkmal | Scrum | Kanban |
+|---------|-------|--------|
+| Zeitrahmen | Feste Sprints | Kontinuierlicher Fluss |
+| Rollen | Product Owner, Scrum Master, Team | Keine festen Rollen |
+| Planung | Sprint Planning | Auf Basis des Boards |
+| Änderungen | Am besten zwischen Sprints | Jederzeit möglich |
+| Metriken | Velocity, Burndown | Lead Time, Cycle Time |
+| Ideal für | Produktentwicklung | Support, Wartung, Ops |
+
+## Hybrid: Scrumban
+
+Viele Teams kombinieren Scrum und Kanban – „Scrumban". Zum Beispiel:
+- Sprint-Zyklen von Scrum mit WIP-Limits von Kanban
+- Kanban-Board mit regelmäßigen Retrospektiven
+
+## Agile Methoden lernen
+
+In unserer Projektmanagement-Weiterbildung lernst Du beide Methoden in der Praxis – inklusive Zertifizierungsvorbereitung für Scrum Master. AZAV-zertifiziert und bis zu 100 % förderbar.`,
+  },
+  {
+    slug: "foerderung-weiterbildung-uebersicht",
+    title: "Förderung Weiterbildung – So funktioniert der Bildungsgutschein",
+    description:
+      "Alles zur Förderung Deiner Weiterbildung über den Bildungsgutschein der Agentur für Arbeit: Voraussetzungen, Leistungen und Ablauf.",
+    category: "foerderung",
+    content: `## Weiterbildung gefördert: Der Bildungsgutschein
+
+Der Bildungsgutschein der Agentur für Arbeit ist die zentrale Förderung für berufliche Weiterbildung in Deutschland. Damit können bis zu 100 % der Weiterbildungskosten übernommen werden.
+
+## Was kann der Bildungsgutschein abdecken?
+
+Laut Agentur für Arbeit können mit dem Bildungsgutschein folgende Kosten übernommen werden:
+- **Lehrgangsgebühren** inkl. Lernmittel und Prüfungsgebühren
+- **Fahrtkosten** zur Bildungsstätte
+- **Kinderbetreuungskosten** während der Weiterbildung
+- **Auswärtige Unterbringung und Verpflegung** (falls tägliches Pendeln nicht zumutbar ist)
+
+Welche Kosten in Deinem Fall übernommen werden, klärst Du im persönlichen Beratungsgespräch mit der Agentur für Arbeit.
+
+## Voraussetzungen
+
+Du kannst einen Bildungsgutschein erhalten, wenn:
+- Du arbeitslos, arbeitssuchend oder von Arbeitslosigkeit bedroht bist
+- Die Weiterbildung notwendig ist, um Deine Arbeitsmarktchancen zu verbessern
+- Der Bildungsträger und die Maßnahme AZAV-zertifiziert sind
+- Du ein persönliches Beratungsgespräch bei der Agentur für Arbeit geführt hast
+
+## So beantragst Du den Bildungsgutschein
+
+1. **Termin vereinbaren** – Kontaktiere Deine Agentur für Arbeit
+2. **Beratungsgespräch** – Besprich Deinen Weiterbildungswunsch
+3. **Gutschein erhalten** – Bei positiver Entscheidung bekommst Du den Bildungsgutschein
+4. **Kurs wählen** – Wähle einen AZAV-zertifizierten Anbieter
+5. **Weiterbildung starten** – Die Kosten werden direkt an den Bildungsträger gezahlt
+
+## Nächster Schritt
+
+Kontaktiere uns für eine kostenlose Beratung. Wir helfen Dir bei der Vorbereitung auf das Gespräch mit der Agentur für Arbeit und stellen Dir alle nötigen Unterlagen bereit.`,
   },
 ];

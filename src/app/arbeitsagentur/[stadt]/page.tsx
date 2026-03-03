@@ -149,12 +149,10 @@ export default async function ArbeitsagenturPage({ params }: PageProps) {
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                "Kursgebühren zu 100 %",
+                "Lehrgangsgebühren (bis zu 100 %)",
                 "Fahrtkosten zum Kursort",
                 "Kinderbetreuungskosten",
                 "Auswärtige Unterbringung (falls nötig)",
-                "ALG I läuft während der Weiterbildung weiter",
-                "Weiterbildungsprämie bei Abschlussprüfung (bis 1.500 €)",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2.5">
                   <svg className="h-5 w-5 text-green-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

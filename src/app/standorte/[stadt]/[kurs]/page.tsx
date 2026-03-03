@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!s || !c) return { title: siteConfig.seoBrand };
   const base = siteConfig.siteUrl.replace(/\/$/, "");
   return {
-    title: `${c.title} Weiterbildung ${s.name} – 100 % gefördert | ${siteConfig.seoBrand}`,
+    title: `${c.title} Weiterbildung ${s.name} – bis zu 100 % gefördert | ${siteConfig.seoBrand}`,
     description: `${c.title} in ${s.name}: ${c.description} AZAV-zertifiziert, komplett förderbar mit Bildungsgutschein.`,
     alternates: { canonical: `${base}/standorte/${s.slug}/${c.slug}` },
   };
@@ -88,7 +88,7 @@ export default async function KursStandortPage({ params }: PageProps) {
               </span>
             ))}
             <span className="rounded-full bg-green-50 border border-green-200 text-green-700 px-4 py-2 text-sm font-semibold">
-              100 % förderbar
+              Bis zu 100 % förderbar
             </span>
             <span className="rounded-full bg-white border border-slate-200 shadow-sm text-foreground px-4 py-2 text-sm font-medium">
               {s.address ? "Vor Ort oder online" : "100 % online"}
