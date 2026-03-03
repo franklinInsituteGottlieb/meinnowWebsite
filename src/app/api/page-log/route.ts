@@ -5,7 +5,7 @@ const WEBHOOK_URL = process.env.PAGE_LOGS_WEBHOOK_URL;
 /**
  * POST /api/page-log
  * Proxy für Google Apps Script doPost – leitet Track-Events an das Sheet weiter.
- * Body: { action: 'track', brand, ts, session_id?, course_id?, meinnow_course_type?, meinnow_course_duration? }
+ * Body: { action: 'track', brand, ts, session_id?, course_id?, course_type?, course_duration? }
  */
 export async function POST(request: Request) {
   if (!WEBHOOK_URL) {
@@ -20,12 +20,12 @@ export async function POST(request: Request) {
     const payload = {
       action: "track",
       route: "track",
-      brand: body.brand ?? "meinnow",
+      brand: body.brand ?? "forward-education",
       ts: body.ts ?? new Date().toISOString(),
       session_id: body.session_id ?? "",
       course_id: body.course_id ?? "",
-      meinnow_course_type: body.meinnow_course_type ?? "",
-      meinnow_course_duration: body.meinnow_course_duration ?? "",
+      course_type: body.course_type ?? "",
+      course_duration: body.course_duration ?? "",
     };
 
     const res = await fetch(WEBHOOK_URL, {

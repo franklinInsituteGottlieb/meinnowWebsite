@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import TypeformLink from "@/components/TypeformLink";
 import { siteConfig } from "@/config/site.config";
@@ -40,7 +41,7 @@ export default function CtaSection() {
           }}
         />
 
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
           {siteConfig.cta.headline}
         </h2>
@@ -48,7 +49,7 @@ export default function CtaSection() {
           {siteConfig.cta.subline}
         </p>
         <div className="mt-10 flex justify-center">
-          <TypeformLink className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-lg font-semibold text-primary shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
+          <TypeformLink className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-lg font-semibold text-primary shadow-lg hover:bg-gray-50">
             Jetzt beraten lassen
             <svg
               className="ml-2 h-5 w-5"
@@ -68,6 +69,17 @@ export default function CtaSection() {
         <p className="mt-8 text-sm text-blue-200">
           Unverbindlich &amp; kostenlos – wir melden uns innerhalb von 24 Stunden.
         </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm">
+          <Link href="/standorte" className="text-blue-200 hover:text-white underline underline-offset-2">
+            Standorte
+          </Link>
+          <Link href="/ratgeber" className="text-blue-200 hover:text-white underline underline-offset-2">
+            Ratgeber
+          </Link>
+          <Link href="/#kurse" className="text-blue-200 hover:text-white underline underline-offset-2">
+            Kurse
+          </Link>
+        </div>
         </div>
       </section>
     </AnimateOnScroll>

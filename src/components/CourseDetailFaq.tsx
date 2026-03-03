@@ -11,19 +11,19 @@ export default function CourseDetailFaq({ items }: { items: FaqItemConfig[] }) {
       {items.map((item, index) => (
         <div
           key={index}
-          className="rounded-2xl bg-white/45 backdrop-blur-xl shadow-md border border-white/40 overflow-hidden"
+          className="rounded-2xl bg-white shadow-md border border-slate-200 overflow-hidden"
         >
           <button
             type="button"
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left font-semibold text-foreground hover:bg-slate-50/50 transition-colors"
+            className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left font-semibold text-foreground hover:bg-slate-50/50"
             aria-expanded={openIndex === index}
             aria-controls={`course-faq-${index}`}
             id={`course-faq-q-${index}`}
           >
             {item.question}
             <svg
-              className={`h-5 w-5 shrink-0 text-primary transition-transform ${openIndex === index ? "rotate-180" : ""}`}
+              className={`h-5 w-5 shrink-0 text-primary ${openIndex === index ? "rotate-180" : ""}`}
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}
@@ -36,7 +36,7 @@ export default function CourseDetailFaq({ items }: { items: FaqItemConfig[] }) {
             id={`course-faq-${index}`}
             role="region"
             aria-labelledby={`course-faq-q-${index}`}
-            className={`overflow-hidden transition-all duration-200 ${openIndex === index ? "max-h-96" : "max-h-0"}`}
+            className={`overflow-hidden ${openIndex === index ? "max-h-96" : "max-h-0"}`}
           >
             <div className="px-6 pb-4 pt-0 text-foreground-light leading-relaxed border-t border-slate-100">
               {item.answer}

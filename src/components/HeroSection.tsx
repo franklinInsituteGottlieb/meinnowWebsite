@@ -6,9 +6,9 @@ import TypeformLink from "@/components/TypeformLink";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden pt-16">
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 text-center">
         {/* Headline – dezentes Fade-in */}
-        <h1 className="hero-headline-in text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-tight">
           {siteConfig.hero.headline}
         </h1>
 
@@ -26,7 +26,7 @@ export default function HeroSection() {
 
         {/* CTA */}
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30 transition-colors duration-300 hover:-translate-y-0.5 hover:scale-105">
+          <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark">
             {siteConfig.hero.ctaText}
             <svg
               className="ml-2 h-5 w-5"
@@ -43,8 +43,8 @@ export default function HeroSection() {
             </svg>
           </TypeformLink>
           <a
-            href="#kurs-finder"
-            className="inline-flex items-center justify-center rounded-full border-2 border-white/50 bg-white/40 backdrop-blur-sm px-8 py-4 text-lg font-bold text-foreground shadow-sm hover:border-primary hover:text-primary hover:bg-white/55 transition-all duration-300"
+            href="#kurse"
+            className="inline-flex items-center justify-center rounded-full border-2 border-white/80 bg-white/90 px-8 py-4 text-lg font-bold text-foreground shadow-sm hover:border-primary hover:text-primary hover:bg-white"
           >
             Kurse entdecken
           </a>

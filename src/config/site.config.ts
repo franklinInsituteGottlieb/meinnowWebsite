@@ -47,6 +47,10 @@ export interface FaqItemConfig {
 
 export interface SiteConfig {
   name: string;
+  /** Brand für SEO: Titel, Meta, Schema (z. B. "Forward Education"). Rechtliches bleibt companyLegalName. */
+  seoBrand: string;
+  /** Öffentliche Basis-URL der Website (für Sitemap, OpenGraph, Canonical). */
+  siteUrl: string;
   /** Rechtliche Bezeichnung, z. B. für Impressum */
   companyLegalName: string;
   tagline: string;
@@ -115,6 +119,8 @@ const APPLICATION_FORM_URL = "https://form.typeform.com/to/APjxbSz0";
 
 export const siteConfig: SiteConfig = {
   name: "Forward Education",
+  seoBrand: "Forward Education",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://forward-education.de",
   companyLegalName: "Forward Education GmbH",
   tagline: "Weiterbildung. Weiterkommen.",
 
@@ -132,7 +138,7 @@ export const siteConfig: SiteConfig = {
   hero: {
     headline: "Deine Zukunft beginnt hier.",
     subline:
-      "Starte jetzt deine Weiterbildung in den gefragtesten Bereichen der digitalen Welt: Künstliche Intelligenz, Sales und Projektmanagement – praxisnah, zertifiziert.",
+      "Mit uns startest Du Deine Weiterbildung in den gefragtesten Bereichen der digitalen Welt: Künstliche Intelligenz, Sales und Projektmanagement – praxisnah, zertifiziert.",
     ctaText: "Jetzt kostenlos beraten lassen",
     ctaHref: APPLICATION_FORM_URL,
   },
@@ -162,7 +168,7 @@ export const siteConfig: SiteConfig = {
       slug: "projektmanagement",
       title: "Projektmanagement",
       description:
-        "Führe Projekte zum Erfolg – mit agilen und klassischen Methoden. Ideal für den Einstieg oder die Vertiefung deiner PM-Kompetenzen.",
+        "Führe Projekte zum Erfolg – mit agilen und klassischen Methoden. Ideal für den Einstieg oder die Vertiefung Deiner PM-Kompetenzen.",
       icon: "target",
       highlights: ["Agiles PM (Scrum)", "Klassisches PM", "Führungskompetenzen"],
       apiCourseId: "e5ca46a1-b606-42b6-834c-23b2ead2f6d2",
@@ -172,33 +178,33 @@ export const siteConfig: SiteConfig = {
 
   benefits: [
     {
-      title: "100\u00A0% förderbar",
-      description: "Unsere Kurse sind AZAV-zertifiziert – die Kosten übernimmt die Agentur für Arbeit oder das Jobcenter.",
+      title: "Du zahlst nichts",
+      description: "Die Agentur für Arbeit übernimmt Kursgebühren, Fahrtkosten und bei Bedarf Kinderbetreuung – über den Bildungsgutschein. Unsere Kurse sind AZAV-zertifiziert.",
       icon: "piggybank",
     },
     {
-      title: "Praxisnahe Inhalte",
-      description: "Lerne anhand realer Projekte und Case Studies, die dich auf den Berufsalltag vorbereiten.",
+      title: "Skills, die Du sofort nutzt",
+      description: "Echte Projekte und Live-Unterricht statt trockener Theorie. Was Du lernst, wendest Du im Beruf direkt an.",
       icon: "briefcase",
     },
     {
-      title: "Flexible Lernzeiten",
-      description: "Online und in Präsenz – gestalte deine Weiterbildung flexibel nach deinem Zeitplan.",
+      title: "Online oder vor Ort",
+      description: "Lerne von zu Hause im virtuellen Klassenzimmer oder in München an unserem Standort – Du entscheidest, was zu Dir passt.",
       icon: "clock",
     },
     {
-      title: "Erfahrene Dozent:innen",
-      description: "Unsere Trainer:innen kommen direkt aus der Praxis und bringen jahrelange Branchenerfahrung mit.",
+      title: "Dozent:innen aus der Praxis",
+      description: "Unsere Trainer:innen haben in KI, Vertrieb oder Projektmanagement gearbeitet und geben Dir konkretes Feedback.",
       icon: "users",
     },
     {
-      title: "Kleine Lerngruppen",
-      description: "Individuelle Betreuung in kleinen Gruppen für maximalen Lernerfolg.",
+      title: "Maximal 15 Teilnehmer:innen",
+      description: "Kleine Gruppen bedeuten: mehr Zeit für Dich, ehrliches Feedback und Begleitung bis zum Abschluss.",
       icon: "usergroup",
     },
     {
-      title: "Karriereberatung",
-      description: "Wir unterstützen dich auch nach dem Kurs – mit Bewerbungscoaching und Karriereplanung.",
+      title: "Bewerbung inklusive",
+      description: "Bewerbungscoaching und Karriereberatung gehören dazu – bis Du Deinen nächsten Job hast.",
       icon: "rocket",
     },
   ],
@@ -206,7 +212,7 @@ export const siteConfig: SiteConfig = {
   cta: {
     headline: "Bereit für den nächsten Schritt?",
     subline:
-      "Vereinbare jetzt ein kostenloses Beratungsgespräch und finde die passende Weiterbildung für deine Zukunft.",
+      "Vereinbare jetzt ein kostenloses Beratungsgespräch und finde die passende Weiterbildung für Deine Zukunft.",
     buttonText: "Jetzt Beratungstermin vereinbaren",
     buttonHref: APPLICATION_FORM_URL,
   },
@@ -226,10 +232,10 @@ export const siteConfig: SiteConfig = {
 
   nav: {
     links: [
-      { label: "Kurse", href: "/#kurs-finder" },
-      { label: "Vorteile", href: "/#vorteile" },
+      { label: "Kurse", href: "/#kurse" },
+      { label: "Standorte", href: "/standorte" },
+      { label: "Ratgeber", href: "/ratgeber" },
       { label: "FAQ", href: "/#faq" },
-      { label: "Kontakt", href: "/#kontakt" },
     ],
     ctaText: "Jetzt beraten lassen",
     ctaHref: APPLICATION_FORM_URL,
@@ -246,9 +252,9 @@ export const siteConfig: SiteConfig = {
     certificates: [],
     awards: [],
     stats: [
-      { value: "100 %", label: "förderbar" },
-      { value: "95 %", label: "Erfolgsquote" },
-      { value: "24 h", label: "Antwort garantiert" },
+      { value: "60.000 €+", label: "Durchschnittliches Einstiegsgehalt in IT, Sales & PM" },
+      { value: "90 %", label: "unserer Absolvent:innen bei attraktiven Arbeitgebern (DAX, Hidden Champions, Tech)" },
+      { value: "< 1 Monat", label: "durchschnittlich bis zum neuen Job nach der Weiterbildung" },
     ],
   },
   faq: [
@@ -273,7 +279,7 @@ export const siteConfig: SiteConfig = {
         "Unsere Weiterbildungen richten sich an Berufseinsteiger:innen, Quereinsteiger:innen und Berufstätige, die sich in den Bereichen KI, Sales oder Projektmanagement qualifizieren möchten. Vorkenntnisse sind je nach Kurs unterschiedlich – wir beraten Sie gerne.",
     },
   ],
-  tracking: { brand: "meinnow" },
+  tracking: { brand: "forward-education" },
 };
 
 /** Dummy-Daten für Kursdetailseiten (später aus Datenbank) */
@@ -372,7 +378,7 @@ export const courseDetailsBySlug: Record<string, CourseDetailConfig> = {
       {
         question: "Bekomme ich nach der Weiterbildung ein anerkanntes Zertifikat?",
         answer:
-          "Ja, im Laufe der Weiterbildung erhältst du mehrere Zertifikate von renommierten Anbietern, die in der IT-Branche ein hohes Ansehen genießen. So kannst du nicht nur mit praktischer Erfahrung, sondern auch mit den passenden Nachweisen in deine IT-Karriere starten.",
+          "Ja, im Laufe der Weiterbildung erhältst Du mehrere Zertifikate von renommierten Anbietern, die in der IT-Branche ein hohes Ansehen genießen. So kannst Du nicht nur mit praktischer Erfahrung, sondern auch mit den passenden Nachweisen in Deine IT-Karriere starten.",
       },
       {
         question: "Was bringt mir die Weiterbildung?",
@@ -494,7 +500,7 @@ export const courseDetailsBySlug: Record<string, CourseDetailConfig> = {
       {
         question: "Bekomme ich nach der Weiterbildung ein anerkanntes Zertifikat?",
         answer:
-          "Ja, im Laufe der Weiterbildung erhältst du mehrere Zertifikate von renommierten Anbietern, die in der IT-Branche ein hohes Ansehen genießen. So kannst du nicht nur mit praktischer Erfahrung, sondern auch mit den passenden Nachweisen in deine IT-Karriere starten.",
+          "Ja, im Laufe der Weiterbildung erhältst Du mehrere Zertifikate von renommierten Anbietern, die in der IT-Branche ein hohes Ansehen genießen. So kannst Du nicht nur mit praktischer Erfahrung, sondern auch mit den passenden Nachweisen in Deine IT-Karriere starten.",
       },
       {
         question: "Was bringt mir die Weiterbildung?",
@@ -622,7 +628,7 @@ export const courseDetailsBySlug: Record<string, CourseDetailConfig> = {
       {
         question: "Bekomme ich nach der Weiterbildung ein anerkanntes Zertifikat?",
         answer:
-          "Ja, im Laufe der Weiterbildung erhältst du mehrere Zertifikate von renommierten Anbietern, die in der IT-Branche ein hohes Ansehen genießen. So kannst du nicht nur mit praktischer Erfahrung, sondern auch mit den passenden Nachweisen in deine IT-Karriere starten.",
+          "Ja, im Laufe der Weiterbildung erhältst Du mehrere Zertifikate von renommierten Anbietern, die in der IT-Branche ein hohes Ansehen genießen. So kannst Du nicht nur mit praktischer Erfahrung, sondern auch mit den passenden Nachweisen in Deine IT-Karriere starten.",
       },
       {
         question: "Was bringt mir die Weiterbildung?",

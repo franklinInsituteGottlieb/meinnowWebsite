@@ -4,14 +4,15 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 const SESSION_ID_KEY = "page_log_session_id";
-const STORAGE_KEY = "meinnow_course_context";
-const ENTERED_VIA_MEINNOW_UTM_KEY = "page_log_entered_via_meinnow_utm";
+const STORAGE_KEY = "course_context";
+const ENTERED_VIA_UTM_KEY = "page_log_entered_via_utm";
 
-/** UTM-Source enthält „meinnow“ (z. B. meinnow oder meinnow-course). */
-function hasMeinnowUtmInUrl(): boolean {
+/** UTM-Source ist forward-education oder website. */
+function hasUtmInUrl(): boolean {
   if (typeof window === "undefined") return false;
   const utm = new URLSearchParams(window.location.search).get("utm_source") ?? "";
-  return utm.toLowerCase().includes("meinnow");
+  const v = utm.toLowerCase();
+  return v === "forward-education" || v === "website";
 }
 
 /** Referrer ist unsere eigene Seite (Navigation von innen). */
@@ -27,21 +28,21 @@ function isReferrerOurSite(): boolean {
 }
 
 /**
- * Tracking nur, wenn der Nutzer von außen mit UTM Meinnow gekommen ist.
+ * Tracking nur, wenn der Nutzer von außen mit UTM (forward-education/website) gekommen ist.
  * – Referrer = unsere Seite → nie Flag setzen; wenn Flag schon gesetzt ist, Session weiter tracken.
- * – Referrer = extern/leer + UTM Meinnow in URL → Flag setzen, ab dann ganze Session in page_log.
+ * – Referrer = extern/leer + UTM in URL → Flag setzen, ab dann ganze Session in page_log.
  */
 function shouldTrackPageLog(): boolean {
   if (typeof window === "undefined") return false;
 
   if (isReferrerOurSite()) {
-    return sessionStorage.getItem(ENTERED_VIA_MEINNOW_UTM_KEY) === "1";
+    return sessionStorage.getItem(ENTERED_VIA_UTM_KEY) === "1";
   }
 
-  if (hasMeinnowUtmInUrl()) {
-    sessionStorage.setItem(ENTERED_VIA_MEINNOW_UTM_KEY, "1");
+  if (hasUtmInUrl()) {
+    sessionStorage.setItem(ENTERED_VIA_UTM_KEY, "1");
   }
-  return sessionStorage.getItem(ENTERED_VIA_MEINNOW_UTM_KEY) === "1";
+  return sessionStorage.getItem(ENTERED_VIA_UTM_KEY) === "1";
 }
 
 function getOrCreateSessionId(): string {
@@ -56,26 +57,26 @@ function getOrCreateSessionId(): string {
 
 function getCourseContext(): {
   course_id: string;
-  meinnow_course_type: string;
-  meinnow_course_duration: string;
+  course_type: string;
+  course_duration: string;
 } {
   if (typeof window === "undefined")
-    return { course_id: "", meinnow_course_type: "", meinnow_course_duration: "" };
+    return { course_id: "", course_type: "", course_duration: "" };
   try {
     const raw = sessionStorage.getItem(STORAGE_KEY);
-    if (!raw) return { course_id: "", meinnow_course_type: "", meinnow_course_duration: "" };
+    if (!raw) return { course_id: "", course_type: "", course_duration: "" };
     const ctx = JSON.parse(raw) as {
       course_id?: string;
-      meinnow_course_type?: string;
-      meinnow_course_duration?: number;
+      course_type?: string;
+      course_duration?: number;
     };
     return {
       course_id: ctx.course_id ?? "",
-      meinnow_course_type: String(ctx.meinnow_course_type ?? ""),
-      meinnow_course_duration: String(ctx.meinnow_course_duration ?? ""),
+      course_type: String(ctx.course_type ?? ""),
+      course_duration: String(ctx.course_duration ?? ""),
     };
   } catch {
-    return { course_id: "", meinnow_course_type: "", meinnow_course_duration: "" };
+    return { course_id: "", course_type: "", course_duration: "" };
   }
 }
 
@@ -104,12 +105,12 @@ export default function PageLogTracker() {
 
     const payload = {
       action: "track",
-      brand: "forward",
+      brand: "forward-education",
       ts: new Date().toISOString(),
       session_id,
       course_id,
-      meinnow_course_type: stored.meinnow_course_type,
-      meinnow_course_duration: stored.meinnow_course_duration,
+      course_type: stored.course_type,
+      course_duration: stored.course_duration,
     };
 
     fetch("/api/page-log", {

@@ -3,6 +3,12 @@ import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { siteConfig } from "@/config/site.config";
 
+const COURSE_IMAGES: Record<string, { src: string; alt: string }> = {
+  "kuenstliche-intelligenz": { src: "/blackman.png", alt: "Weiterbildung Künstliche Intelligenz – Forward Education" },
+  "it-sales": { src: "/asian.png", alt: "Weiterbildung Sales und IT-Vertrieb – Forward Education" },
+  "projektmanagement": { src: "/schwarzeFrauMann.png", alt: "Weiterbildung Projektmanagement – Forward Education" },
+};
+
 function CourseIcon({ icon }: { icon: string }) {
   switch (icon) {
     case "brain":
@@ -37,9 +43,9 @@ function CourseIcon({ icon }: { icon: string }) {
 export default function CoursesSection() {
   return (
     <section id="kurse" className="relative py-24 scroll-mt-28">
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header – von unten der Reihe nach, jedes Mal wenn Abschnitt geöffnet wird */}
-        <div className="text-center mb-16">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-12">
           <AnimateOnScroll animation="fadeUp" delay={0} replayWhenInView>
             <span className="block text-sm font-semibold uppercase tracking-widest text-primary">
               Unsere Weiterbildungen
@@ -47,70 +53,77 @@ export default function CoursesSection() {
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeUp" delay={120} replayWhenInView>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground">
-              Wähle deinen Karriereweg
+              Wähle Deinen Karriereweg
             </h2>
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeUp" delay={240} replayWhenInView>
             <p className="mt-4 mx-auto max-w-2xl text-lg text-foreground-light">
-              Drei zukunftssichere Fachbereiche – alle praxisnah, zertifiziert und
-              auf die Anforderungen des Arbeitsmarktes zugeschnitten.
+              KI, Sales oder Projektmanagement – in 3 bis 6 Monaten fit für den Arbeitsmarkt. Alle Kurse mit Bildungsgutschein förderbar.
             </p>
           </AnimateOnScroll>
         </div>
 
-        {/* Course Cards – gleiche Höhe für alle Kacheln */}
+        {/* Course Cards */}
         <div className="grid gap-8 md:grid-cols-3 md:items-stretch">
           {siteConfig.courses.map((course, index) => (
             <AnimateOnScroll key={course.title} animation="fadeUp" delay={index * 100} replayWhenInView className="h-full min-h-[320px]">
-            <Link
-              href={`/kurse/${course.slug}`}
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white/45 backdrop-blur-xl shadow-lg shadow-black/5 border border-white/40 hover:bg-white/60 hover:shadow-xl hover:border-white/50 hover:-translate-y-0.5 transition-all duration-300 block p-0"
-            >
-              {/* Oberer Bereich: Bild oder Platzhalter */}
-              <div className="relative h-64 w-full shrink-0 overflow-hidden rounded-t-2xl bg-slate-100">
-                {course.slug === "kuenstliche-intelligenz" ? (
-                  <Image
-                    src="/blackman.png"
-                    alt=""
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                ) : course.slug === "it-sales" ? (
-                  <Image
-                    src="/asian.png"
-                    alt=""
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                ) : course.slug === "projektmanagement" ? (
-                  <Image
-                    src="/schwarzeFrauMann.png"
-                    alt=""
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center text-foreground-light/40">
-                    <span className="text-sm font-medium">Bild</span>
-                  </div>
-                )}
-              </div>
-              <div className="flex flex-1 flex-col p-8 pt-6">
-                <h3 className="text-xl font-bold text-foreground mb-3">{course.title}</h3>
-                <p className="text-foreground-light leading-relaxed flex-1">{course.description}</p>
-                <div className="mt-auto pt-6 flex items-center gap-1 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                  Mehr erfahren
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
+              <Link
+                href={`/kurse/${course.slug}`}
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm border border-slate-200 hover:shadow-lg hover:border-primary/20 transition-all block p-0"
+              >
+                <div className="relative h-64 w-full shrink-0 overflow-hidden rounded-t-2xl bg-slate-100">
+                  {COURSE_IMAGES[course.slug] ? (
+                    <Image
+                      src={COURSE_IMAGES[course.slug].src}
+                      alt={COURSE_IMAGES[course.slug].alt}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-foreground-light/40">
+                      <span className="text-sm font-medium">Bild</span>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </Link>
+                <div className="flex flex-1 flex-col p-8 pt-6">
+                  <h3 className="text-xl font-bold text-foreground mb-3">{course.title}</h3>
+                  <p className="text-foreground-light leading-relaxed mb-4">{course.description}</p>
+                  <ul className="space-y-1.5 mb-6">
+                    {course.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-2 text-sm text-foreground-light">
+                        <svg className="h-4 w-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto text-sm font-semibold text-primary flex items-center gap-1">
+                    Mehr erfahren
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
             </AnimateOnScroll>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <Link
+            href={siteConfig.hero.ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors"
+          >
+            Jetzt beraten lassen
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

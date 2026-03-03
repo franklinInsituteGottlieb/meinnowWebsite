@@ -4,9 +4,11 @@ import PageBackground from "@/components/PageBackground";
 import DatenschutzContent from "@/components/DatenschutzContent";
 import { siteConfig } from "@/config/site.config";
 
+const base = siteConfig.siteUrl.replace(/\/$/, "");
 export const metadata = {
-  title: `Impressum & Datenschutz – ${siteConfig.name}`,
-  description: "Impressum und Datenschutzerklärung von Forward Education.",
+  title: `Impressum & Datenschutz | ${siteConfig.seoBrand}`,
+  description: "Impressum und Datenschutzerklärung von Forward Education GmbH.",
+  alternates: { canonical: `${base}/impressum` },
 };
 
 export default function ImpressumPage() {
@@ -30,20 +32,20 @@ export default function ImpressumPage() {
           <nav className="flex flex-wrap justify-center gap-3 mb-14">
             <a
               href="#impressum"
-              className="rounded-full bg-white/50 backdrop-blur-sm border border-white/60 px-5 py-2.5 text-sm font-semibold text-foreground shadow-md shadow-black/5 hover:bg-white/70 hover:border-primary/30 hover:text-primary transition-all duration-200"
+              className="rounded-full bg-white border border-slate-200 px-5 py-2.5 text-sm font-semibold text-foreground shadow-md shadow-black/5 hover:bg-slate-50 hover:border-primary/30 hover:text-primary"
             >
               Impressum
             </a>
             <a
               href="#datenschutz"
-              className="rounded-full bg-white/50 backdrop-blur-sm border border-white/60 px-5 py-2.5 text-sm font-semibold text-foreground shadow-md shadow-black/5 hover:bg-white/70 hover:border-primary/30 hover:text-primary transition-all duration-200"
+              className="rounded-full bg-white border border-slate-200 px-5 py-2.5 text-sm font-semibold text-foreground shadow-md shadow-black/5 hover:bg-slate-50 hover:border-primary/30 hover:text-primary"
             >
               Datenschutz
             </a>
           </nav>
 
           {/* Content in Glas-Karte – wie Kurse/Vorteile */}
-          <div className="rounded-2xl bg-white/45 backdrop-blur-xl shadow-lg shadow-black/5 border border-white/40 overflow-hidden">
+          <div className="rounded-2xl bg-white shadow-lg border border-slate-200 overflow-hidden">
             <div className="p-8 sm:p-10">
               <section id="impressum" className="scroll-mt-28">
                 <h2 className="text-xl font-semibold uppercase tracking-widest text-primary mb-3">

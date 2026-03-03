@@ -48,49 +48,48 @@ function BenefitIcon({ icon }: { icon: string }) {
 export default function BenefitsSection() {
   return (
     <section id="vorteile" className="py-24 scroll-mt-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header – gestaffelt von oben nach unten, mit Replay beim Reinscrollen */}
-        <div className="text-center mb-16">
-          <AnimateOnScroll animation="fadeUp" delay={0} replayWhenInView>
-            <span className="block text-sm font-semibold uppercase tracking-widest text-primary">
-              Deine Vorteile
-            </span>
-          </AnimateOnScroll>
-          <AnimateOnScroll animation="fadeUp" delay={120} replayWhenInView>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground">
-              Warum Forward Education?
-            </h2>
-          </AnimateOnScroll>
-          <AnimateOnScroll animation="fadeUp" delay={240} replayWhenInView>
-            <p className="mt-4 mx-auto max-w-2xl text-lg text-foreground-light">
-              Wir begleiten dich auf deinem Weg – von der ersten Beratung bis zum
-              erfolgreichen Berufseinstieg.
-            </p>
-          </AnimateOnScroll>
-        </div>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll animation="fadeUp" delay={0} replayWhenInView>
+          {/* Eine große Kachel: Header + alle Vorteile darin */}
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 shadow-sm overflow-hidden">
+            {/* Header-Bereich in der Kachel */}
+            <div className="px-8 pt-10 pb-6 sm:px-12 sm:pt-12 sm:pb-8 text-center border-b border-slate-200/80 bg-white/60">
+              <span className="block text-sm font-semibold uppercase tracking-widest text-primary">
+                Deine Vorteile
+              </span>
+              <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-foreground">
+                Deine Vorteile
+              </h2>
+              <p className="mt-4 mx-auto max-w-2xl text-foreground-light">
+                Von der ersten Beratung bis zum nächsten Job: Du bekommst konkrete Skills, keine Kosten und Begleitung, die wirkt.
+              </p>
+            </div>
 
-        {/* Benefits Grid – Karten nacheinander mit Replay, gleiche Höhe */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
-          {siteConfig.benefits.map((benefit, index) => (
-            <AnimateOnScroll key={benefit.title} animation="fadeUp" delay={index * 100} replayWhenInView className="h-full min-h-[240px]">
-            <div
-              className="group flex h-full flex-col gap-4 rounded-2xl p-6 bg-white/45 backdrop-blur-xl border border-white/40 hover:bg-white/60 hover:border-white/50 hover:-translate-y-0.5 shadow-lg shadow-black/5 transition-all duration-300"
-            >
-              <div className="flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-light text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                <BenefitIcon icon={benefit.icon} />
-              </div>
-              <div className="flex-1 flex flex-col min-h-0">
-                <h3 className="text-lg font-semibold text-foreground mb-1">
-                  {benefit.title}
-                </h3>
-                <p className="text-foreground-light leading-relaxed flex-1">
-                  {benefit.description}
-                </p>
+            {/* Vorteile als Grid innerhalb der Kachel */}
+            <div className="p-8 sm:p-10 lg:p-12">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {siteConfig.benefits.map((benefit, index) => (
+                  <div
+                    key={benefit.title}
+                    className="flex gap-4"
+                  >
+                    <div className="flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-light text-primary">
+                      <BenefitIcon icon={benefit.icon} />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="text-base font-semibold text-foreground mb-1">
+                        {benefit.title}
+                      </h3>
+                      <p className="text-sm text-foreground-light leading-relaxed">
+                        {benefit.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-            </AnimateOnScroll>
-          ))}
-        </div>
+          </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

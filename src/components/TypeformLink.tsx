@@ -1,19 +1,18 @@
 "use client";
 
-import { buildTypeformUrl, type MeinnowCourseContext } from "@/lib/typeform-url";
+import { buildTypeformUrl, type CourseContext } from "@/lib/typeform-url";
 
-const STORAGE_KEY = "meinnow_course_context";
-/** Nur wenn gesetzt: Nutzer kam von außen mit UTM Meinnow (nicht von Google). Dann UTM/Course an Typeform übergeben. */
-const ENTERED_VIA_MEINNOW_UTM_KEY = "page_log_entered_via_meinnow_utm";
+const STORAGE_KEY = "course_context";
+const ENTERED_VIA_UTM_KEY = "page_log_entered_via_utm";
 
-/** Typeform-URL: UTM/Course-Parameter nur, wenn Nutzer über UTM Meinnow gekommen ist; sonst nur Basis-URL. */
+/** Typeform-URL: UTM/Course-Parameter nur, wenn Nutzer mit UTM von außen gekommen ist; sonst nur Basis-URL. */
 function getTypeformUrl(): string {
   if (typeof window === "undefined") return buildTypeformUrl();
-  if (sessionStorage.getItem(ENTERED_VIA_MEINNOW_UTM_KEY) !== "1") return buildTypeformUrl();
+  if (sessionStorage.getItem(ENTERED_VIA_UTM_KEY) !== "1") return buildTypeformUrl();
   try {
     const stored = sessionStorage.getItem(STORAGE_KEY);
     if (stored) {
-      const context = JSON.parse(stored) as MeinnowCourseContext;
+      const context = JSON.parse(stored) as CourseContext;
       return buildTypeformUrl(context);
     }
   } catch {

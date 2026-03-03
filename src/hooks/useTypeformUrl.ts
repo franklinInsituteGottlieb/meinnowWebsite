@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { buildTypeformUrl, type MeinnowCourseContext } from "@/lib/typeform-url";
+import { buildTypeformUrl, type CourseContext } from "@/lib/typeform-url";
 
-const STORAGE_KEY = "meinnow_course_context";
-const ENTERED_VIA_MEINNOW_UTM_KEY = "page_log_entered_via_meinnow_utm";
+const STORAGE_KEY = "course_context";
+const ENTERED_VIA_UTM_KEY = "page_log_entered_via_utm";
 
 export function useTypeformUrl(): string {
   const [url, setUrl] = useState(() => buildTypeformUrl());
@@ -14,14 +14,14 @@ export function useTypeformUrl(): string {
       setUrl(buildTypeformUrl());
       return;
     }
-    if (sessionStorage.getItem(ENTERED_VIA_MEINNOW_UTM_KEY) !== "1") {
+    if (sessionStorage.getItem(ENTERED_VIA_UTM_KEY) !== "1") {
       setUrl(buildTypeformUrl());
       return;
     }
     try {
       const stored = sessionStorage.getItem(STORAGE_KEY);
       if (stored) {
-        const context = JSON.parse(stored) as MeinnowCourseContext;
+        const context = JSON.parse(stored) as CourseContext;
         setUrl(buildTypeformUrl(context));
       } else {
         setUrl(buildTypeformUrl());
@@ -33,8 +33,8 @@ export function useTypeformUrl(): string {
 
   useEffect(() => {
     updateUrl();
-    window.addEventListener("meinnow-course-stored", updateUrl);
-    return () => window.removeEventListener("meinnow-course-stored", updateUrl);
+    window.addEventListener("course-context-stored", updateUrl);
+    return () => window.removeEventListener("course-context-stored", updateUrl);
   }, [updateUrl]);
 
   return url;

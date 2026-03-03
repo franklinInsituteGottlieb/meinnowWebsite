@@ -45,7 +45,7 @@ export default function HeroScrollBlob() {
 
   return (
     <div
-      className={`absolute left-1/2 bottom-0 pointer-events-none -translate-x-1/2 w-[480px] h-[480px] rounded-full transition-all duration-300 ease-out ${blurClass}`}
+      className={`absolute left-1/2 bottom-0 pointer-events-none -translate-x-1/2 w-[480px] h-[480px] rounded-full ${blurClass}`}
       style={{
         transform: `translate(-50%, ${translateY}px) scale(${scale})`,
         transformOrigin: "50% 100%",

@@ -4,7 +4,7 @@
 
 | Quelle | Sheet | Inhalt |
 |--------|--------|--------|
-| Nur wenn Nutzer **von außen** mit UTM Meinnow kommt | **page_logs** | brand, received_at, ts, session_id, course_id, meinnow_course_type, meinnow_course_duration |
+| Nur wenn Nutzer **von außen** mit UTM (forward-education/website) kommt | **page_logs** | brand, received_at, ts, session_id, course_id, course_type, course_duration |
 | **Internes** Website-Logging (immer) | **website_logs** | received_at, session_id, type (page_view / search / click), pathname, search_query, search_result_slug, search_result_course_id, click_href, click_text |
 
 ---

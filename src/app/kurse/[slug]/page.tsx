@@ -1,11 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TypeformLink from "@/components/TypeformLink";
 import HeroFixedBackground from "@/components/HeroFixedBackground";
 import CourseDetailFaq from "@/components/CourseDetailFaq";
+import CourseSchema from "@/components/schema/CourseSchema";
 import { siteConfig, courseDetailsBySlug } from "@/config/site.config";
+import { featuredStandorte } from "@/config/standorte.config";
 import { getCourseById } from "@/lib/franklin-api";
 import { jaccard, toWordSet } from "@/lib/text-similarity";
 
@@ -53,7 +56,7 @@ export async function generateMetadata({ params, searchParams }: PageProps) {
   const q = resolved?.q;
   const titleParam = resolved?.title;
   const course = siteConfig.courses.find((c) => c.slug === slug);
-  if (!course) return { title: siteConfig.name };
+  if (!course) return { title: siteConfig.seoBrand };
   let title = course.title;
   if (q && titleParam) title = decodeURIComponent(titleParam);
   const description = course.description;
@@ -91,9 +94,11 @@ export async function generateMetadata({ params, searchParams }: PageProps) {
       title = bestTitle;
     }
   }
+  const canonical = `${siteConfig.siteUrl.replace(/\/$/, "")}/kurse/${slug}`;
   return {
-    title: `${title} – ${siteConfig.name}`,
+    title: `${title} | ${siteConfig.seoBrand}`,
     description,
+    alternates: { canonical },
   };
 }
 
@@ -161,15 +166,18 @@ export default async function CourseDetailPage({ params, searchParams }: PagePro
     }
   }
 
+  const courseUrl = `${siteConfig.siteUrl.replace(/\/$/, "")}/kurse/${slug}`;
+
   return (
     <>
+      <CourseSchema name={displayTitle} description={course.description} url={courseUrl} />
       <Navbar />
       <main className="relative min-h-screen pt-20 pb-24">
         <div className="fixed inset-0 z-0 bg-background" aria-hidden />
         <HeroFixedBackground />
         {/* Hero-Bereich – Titel links, Bild rechts */}
         <section className="relative min-h-[70vh] flex items-center overflow-x-hidden pt-12 pb-24">
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 w-full">
+          <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 w-full">
             <div className="grid lg:grid-cols-2 gap-0 items-stretch lg:min-h-[420px]">
               {/* Links: Titel, Bewertung, Vorteile, CTAs */}
               <div className="course-hero-title-box text-center lg:text-left flex flex-col items-center lg:items-start justify-center lg:pr-6">
@@ -195,7 +203,7 @@ export default async function CourseDetailPage({ params, searchParams }: PagePro
                     <span>450+ Google-Bewertungen</span>
                   </p>
                 </div>
-                <h1 className="course-hero-title hero-headline-in font-extrabold tracking-tight text-foreground leading-tight break-words">
+                <h1 className="course-hero-title font-extrabold tracking-tight text-foreground leading-tight break-words">
                   {displayTitle}
                 </h1>
                 <ul className="mt-6 flex flex-col items-center lg:items-start gap-2 text-base sm:text-lg text-foreground-light">
@@ -215,7 +223,7 @@ export default async function CourseDetailPage({ params, searchParams }: PagePro
                   </li>
                 </ul>
                 <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30 transition-colors duration-300 hover:-translate-y-0.5 hover:scale-105">
+                  <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark">
                     Platz sichern
                     <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -223,7 +231,7 @@ export default async function CourseDetailPage({ params, searchParams }: PagePro
                   </TypeformLink>
                   <a
                     href="#inhalt"
-                    className="inline-flex items-center justify-center rounded-full border-2 border-white/50 bg-white/40 backdrop-blur-sm px-8 py-4 text-lg font-bold text-foreground shadow-sm hover:border-primary hover:text-primary hover:bg-white/55 transition-all duration-300"
+                    className="inline-flex items-center justify-center rounded-full border-2 border-slate-300 bg-white/90 px-8 py-4 text-lg font-bold text-foreground shadow-sm hover:border-primary hover:text-primary hover:bg-slate-50"
                   >
                     Kursinhalt
                   </a>
@@ -231,10 +239,10 @@ export default async function CourseDetailPage({ params, searchParams }: PagePro
               </div>
               {/* Rechts: Bild */}
               <div className="hidden lg:block relative min-h-[320px]">
-                <div className="relative w-full h-full min-h-[380px] rounded-2xl overflow-hidden border border-white/40 shadow-lg">
+                <div className="relative w-full h-full min-h-[380px] rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
                   <Image
-                    src="/asian+black.png"
-                    alt=""
+                    src={detail.heroImage ?? "/asian+black.png"}
+                    alt={`${displayTitle} – ${siteConfig.seoBrand}`}
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 1024px) 0px, 480px"
@@ -248,11 +256,11 @@ export default async function CourseDetailPage({ params, searchParams }: PagePro
           </div>
         </section>
 
-        <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-4 pb-20">
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-4 pb-20">
           {/* Lerninhalt – alles in einer Karte */}
           <section id="inhalt" className="mb-20 scroll-mt-28">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Deine Lerninhalte im Überblick</h2>
-            <div className="rounded-2xl bg-white/50 backdrop-blur-xl shadow-lg shadow-black/5 border border-white/50 overflow-hidden">
+            <div className="rounded-2xl bg-white shadow-lg border border-slate-200 overflow-hidden">
               {contentSections.map((section, i) => (
                 <div
                   key={section.title}
@@ -279,6 +287,30 @@ export default async function CourseDetailPage({ params, searchParams }: PagePro
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">FAQ</h2>
             <CourseDetailFaq items={detail.faq} />
+          </section>
+
+          {/* Standort Cross-Links */}
+          <section className="mt-16">
+            <h2 className="text-xl font-bold text-foreground mb-4">
+              Diesen Kurs an deinem Standort
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {featuredStandorte.slice(0, 5).map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/standorte/${s.slug}/${slug}`}
+                  className="rounded-full border border-primary/30 bg-slate-50 px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+                >
+                  {course.title} in {s.name}
+                </Link>
+              ))}
+              <Link
+                href="/standorte"
+                className="rounded-full border border-slate-200 bg-slate-50 px-5 py-2.5 text-sm font-semibold text-foreground-light hover:text-foreground transition-colors"
+              >
+                Alle Standorte →
+              </Link>
+            </div>
           </section>
         </div>
       </main>

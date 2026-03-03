@@ -101,9 +101,9 @@ Website: forward-education.de`}
       <p className="text-foreground-light leading-relaxed">
         Sofern eine betroffene Person per E-Mail oder über ein Kontaktformular den Kontakt mit dem für die Verarbeitung Verantwortlichen aufnimmt, werden die von der betroffenen Person übermittelten personenbezogenen Daten automatisch gespeichert. Solche Daten werden für Zwecke der Bearbeitung oder der Kontaktaufnahme zur betroffenen Person gespeichert. Es erfolgt keine Weitergabe dieser personenbezogenen Daten an Dritte.
       </p>
-      <h2>8. Abonnement von Kommentaren im Blog</h2>
+      <h2>8. Abonnement von Kommentaren im Ratgeber</h2>
       <p className="text-foreground-light leading-relaxed">
-        Die im Blog der Forward Education GmbH abgegebenen Kommentare können grundsätzlich von Dritten abonniert werden. Sofern sich eine betroffene Person für die Option entscheidet, Kommentare zu abonnieren, versendet der für die Verarbeitung Verantwortliche eine automatische Bestätigungsmail im Double-Opt-In-Verfahren. Die Option zum Abonnement von Kommentaren kann jederzeit beendet werden.
+        Die im Ratgeber der Forward Education GmbH abgegebenen Kommentare können grundsätzlich von Dritten abonniert werden. Sofern sich eine betroffene Person für die Option entscheidet, Kommentare zu abonnieren, versendet der für die Verarbeitung Verantwortliche eine automatische Bestätigungsmail im Double-Opt-In-Verfahren. Die Option zum Abonnement von Kommentaren kann jederzeit beendet werden.
       </p>
       <h2>9. Routinemäßige Löschung und Sperrung von personenbezogenen Daten</h2>
       <p className="text-foreground-light leading-relaxed">

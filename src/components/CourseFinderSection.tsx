@@ -76,7 +76,7 @@ function TypewriterPlaceholder({ visible }: { visible: boolean }) {
   return (
     <span className="text-foreground-light">
       {text}
-      <span className="animate-pulse">|</span>
+      <span>|</span>
     </span>
   );
 }
@@ -129,7 +129,7 @@ export default function CourseFinderSection() {
       }
 
       if (match.course_id) {
-        sessionStorage.setItem("meinnow_course_from_site", "1");
+        sessionStorage.setItem("course_from_site", "1");
         window.dispatchEvent(
           new CustomEvent("website-log-search", {
             detail: { query: raw, course_id: match.course_id },
@@ -137,7 +137,7 @@ export default function CourseFinderSection() {
         );
         const params = new URLSearchParams({
           course_id: match.course_id,
-          utm_source: "meinnow-course",
+          utm_source: "website",
         });
         if (raw) params.set("q", raw);
         if (match.title) params.set("title", match.title);
@@ -160,12 +160,12 @@ export default function CourseFinderSection() {
 
   return (
     <section id="kurs-finder" className="relative py-16 scroll-mt-28">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-2">
           Passenden Kurs finden
         </h2>
         <p className="text-foreground-light text-center mb-8">
-          Suchen Sie nach Thema oder stöbern Sie in unseren Schwerpunkten.
+          Such nach Thema oder stöber in unseren Schwerpunkten.
         </p>
 
         {/* Suchmaske – bei Suchen → Kursdetailseite (Dummy, später DB) */}
@@ -173,20 +173,20 @@ export default function CourseFinderSection() {
         <div
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className={`relative mb-10 rounded-2xl transition-all duration-300 ease-out ${
+          className={`relative mb-10 rounded-2xl ${
             expanded
-              ? "scale-[1.03] shadow-xl shadow-primary/15 ring-2 ring-primary/25"
-              : "scale-100 shadow-md shadow-black/5"
+              ? "shadow-xl shadow-primary/15 ring-2 ring-primary/25"
+              : "shadow-md shadow-black/5"
           }`}
         >
           <div
-            className={`relative rounded-2xl border bg-white overflow-hidden transition-all duration-300 ease-out ${
+            className={`relative rounded-2xl border bg-white overflow-hidden ${
               expanded ? "border-primary/80" : "border-slate-200"
             }`}
           >
             {/* Such-Icon – wächst mit */}
             <svg
-              className={`absolute left-5 top-1/2 -translate-y-1/2 z-10 text-foreground-light transition-all duration-300 ${
+              className={`absolute left-5 top-1/2 -translate-y-1/2 z-10 text-foreground-light ${
                 expanded ? "h-6 w-6 left-5" : "h-5 w-5 left-4"
               }`}
               fill="none"
@@ -198,11 +198,11 @@ export default function CourseFinderSection() {
             </svg>
             {/* Typewriter-Overlay wenn leer und nicht fokussiert */}
             <div
-              className="absolute left-14 right-28 top-1/2 -translate-y-1/2 flex items-center pointer-events-none text-left overflow-hidden transition-all duration-300"
+              className="absolute left-14 right-28 top-1/2 -translate-y-1/2 flex items-center pointer-events-none text-left overflow-hidden"
               style={{ height: expanded ? "2.25rem" : "2rem" }}
               aria-hidden
             >
-              <span className={`transition-all duration-300 ${expanded ? "text-lg" : "text-base"}`}>
+              <span className={expanded ? "text-lg" : "text-base"}>
                 <TypewriterPlaceholder visible={showTypewriter} />
               </span>
             </div>
@@ -213,7 +213,7 @@ export default function CourseFinderSection() {
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
               placeholder=""
-              className={`search-input-custom-clear w-full rounded-2xl bg-transparent text-foreground placeholder:text-transparent shadow-none border-0 outline-none transition-all duration-300 ease-out ${
+              className={`search-input-custom-clear w-full rounded-2xl bg-transparent text-foreground placeholder:text-transparent shadow-none border-0 outline-none ${
                 expanded
                   ? `py-6 pl-14 text-lg ${search.length > 0 ? "pr-36" : "pr-32"}`
                   : `py-4 pl-12 text-base ${search.length > 0 ? "pr-28" : "pr-24"}`
@@ -225,10 +225,10 @@ export default function CourseFinderSection() {
               <button
                 type="button"
                 onClick={() => setSearch("")}
-                className="absolute right-28 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center rounded-full p-1.5 text-foreground-light hover:text-foreground hover:bg-slate-100 transition-all duration-200"
+                className="absolute right-28 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center rounded-full p-1.5 text-foreground-light hover:text-foreground hover:bg-slate-100"
                 aria-label="Suche leeren"
               >
-                <svg className={`transition-transform duration-300 ${expanded ? "h-5 w-5" : "h-4 w-4"}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <svg className={expanded ? "h-5 w-5" : "h-4 w-4"} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -237,7 +237,7 @@ export default function CourseFinderSection() {
           {/* Suchen-Button – wächst mit dem Feld, führt zur Kursdetailseite */}
           <button
             type="submit"
-            className={`absolute top-1/2 -translate-y-1/2 z-10 rounded-xl bg-primary font-semibold text-white hover:bg-primary-dark transition-all duration-300 ${
+            className={`absolute top-1/2 -translate-y-1/2 z-10 rounded-xl bg-primary font-semibold text-white hover:bg-primary-dark ${
               expanded
                 ? "right-3 px-6 py-3 text-base"
                 : "right-2 px-5 py-2.5 text-sm"
@@ -253,8 +253,8 @@ export default function CourseFinderSection() {
         )}
         </form>
 
-        {/* Themen-Kacheln – wie eine Anfrage: „Weißt du was ich mein?“ mit API-Titel wo passend */}
-        <p className="text-sm font-medium text-foreground-light mb-4">Weißt du was ich mein?</p>
+        {/* Themen-Kacheln – wie eine Anfrage: „Weißt Du was ich mein?“ mit API-Titel wo passend */}
+        <p className="text-sm font-medium text-foreground-light mb-4">Weißt Du was ich mein?</p>
         <div className="grid gap-4 sm:grid-cols-3">
           {siteConfig.courseTopics.map((topic) => {
             const slug = slugFromHref(topic.href);
@@ -265,7 +265,7 @@ export default function CourseFinderSection() {
               <Link
                 key={`${topic.href}-${topic.label}`}
                 href={hrefWithQuery}
-                className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-md shadow-black/5 border border-white/60 hover:border-primary/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-md border border-slate-200 hover:border-primary/30 hover:shadow-lg transition-all"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-light text-primary">
                   <TopicIcon icon={topic.icon} />
