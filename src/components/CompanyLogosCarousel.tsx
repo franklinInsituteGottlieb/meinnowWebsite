@@ -1,11 +1,12 @@
 "use client";
 
 const COMPANY_LOGOS = [
-  "/companies/Allianz Deutschland/Allianz Deutschland_Logo_0.svg",
+  "/companies/Amazon/Amazon_Logo_0.svg",
   "/companies/Bosch/Bosch_idi5e7gC2E_0.svg",
-  "/companies/CHECK24/CHECK24_idaK7ut65i_3.svg",
-  "/companies/Deloitte/Deloitte_idXbysKEDR_1.svg",
-  "/companies/Porsche/Porsche_Logo_0.svg",
+  "/companies/CheckCars24/CheckCars24_idcvOlzCAN_1.svg",
+  "/companies/Flink/Flink_idrKzJFqme_0.svg",
+  "/companies/HORBACH/HORBACH_idTfrkbpIs_1.svg",
+  "/companies/Innoscripta SE/Innoscripta SE_idmsnGnK-O_1.svg",
   "/companies/Siemens/Siemens_id0if2F9r8_1.svg",
 ] as const;
 
@@ -17,28 +18,22 @@ export default function CompanyLogosCarousel() {
       </p>
       <div className="relative overflow-hidden">
         <div className="company-logos-track flex w-max gap-12 items-center">
-          {[...COMPANY_LOGOS, ...COMPANY_LOGOS].map((src, i) => {
-            const isPorsche = src.includes("Porsche");
-            return (
+          {[...COMPANY_LOGOS, ...COMPANY_LOGOS].map((src, i) => (
               <div
                 key={`${src}-${i}`}
-                className={`flex shrink-0 items-center justify-center [filter:brightness(0)] ${isPorsche ? "h-12" : "h-8"}`}
-                style={{
-                  width: isPorsche ? "clamp(140px, 18vw, 200px)" : "clamp(80px, 12vw, 140px)",
-                  ...(isPorsche && { filter: "brightness(0) contrast(1.12)" }),
-                }}
+                className="flex shrink-0 items-center justify-center h-8 [filter:brightness(0)]"
+                style={{ width: "clamp(80px, 12vw, 140px)" }}
               >
                 <img
                   src={src}
                   alt=""
                   className="h-full w-auto object-contain object-center"
-                  width={isPorsche ? 180 : 120}
-                  height={isPorsche ? 48 : 32}
+                  width={120}
+                  height={32}
                   aria-hidden
                 />
               </div>
-            );
-          })}
+            ))}
         </div>
       </div>
     </div>
