@@ -8,11 +8,18 @@ export interface CourseContext {
   course_duration: number;
 }
 
+/** UTM-Parameter, die an Typeform durchgereicht werden (z. B. utm_source=meinnow). */
+export type TypeformUtmParams = Record<string, string>;
+
 /**
  * Baut die vollständige Typeform-URL mit Query-Parametern.
  * Ohne params: Basis-URL mit typeform-source.
+ * utmOverride: wenn gesetzt (z. B. von aktueller Page-URL), werden diese UTM-Parameter angehängt.
  */
-export function buildTypeformUrl(params?: CourseContext): string {
+export function buildTypeformUrl(
+  params?: CourseContext,
+  utmOverride?: TypeformUtmParams
+): string {
   const base = new URL(TYPEFORM_BASE_URL);
   base.searchParams.set("typeform-source", "forward-education.de");
 
@@ -21,6 +28,12 @@ export function buildTypeformUrl(params?: CourseContext): string {
     base.searchParams.set("utm_source", "forward-education");
     base.searchParams.set("course_type", params.course_type);
     base.searchParams.set("course_duration", String(params.course_duration));
+  }
+
+  if (utmOverride && Object.keys(utmOverride).length > 0) {
+    for (const [key, value] of Object.entries(utmOverride)) {
+      if (value) base.searchParams.set(key, value);
+    }
   }
 
   return base.toString();

@@ -13,6 +13,14 @@ Die Sitemap wird phasenweise gesteuert (Env: `SITEMAP_PHASE`), damit Google zuer
 - **Aktuell:** `SITEMAP_PHASE=1` in `.env.local` → nur ~115 URLs in `/sitemap.xml`. Nach Indexierung Phase 2, dann 3 hochschalten.
 - Details: [docs/README.md](docs/README.md) (Indexierungs-Strategie)
 
+### Nächste Schritte nach Git Push
+
+1. **Deploy** – Vercel/Hosting baut automatisch; dort `SITEMAP_PHASE=1` in den Env-Variablen setzen (falls noch nicht).
+2. **Sitemap prüfen** – Nach Deploy `https://deine-domain.de/sitemap.xml` öffnen → sollten ~115 URLs stehen.
+3. **Google Search Console** – Property anlegen (falls noch nicht), dann Sitemap einreichen: URL `https://deine-domain.de/sitemap.xml`.
+4. **Manuelle Indexierung** – In GSC „URL-Prüfung" oben: diese 5 URLs nacheinander eingeben und „Indexierung beantragen": `/`, `/kurse/kuenstliche-intelligenz`, `/kurse/it-sales`, `/kurse/projektmanagement`, `/kosten`.
+5. **Warten (1–2 Wochen)** – GSC → „Seiten" prüfen („Gültig" sollte steigen). Dann Phase 2: `SITEMAP_PHASE=2` setzen, deployen, Sitemap in GSC erneut einreichen.
+
 ## Getting Started
 
 First, run the development server:
