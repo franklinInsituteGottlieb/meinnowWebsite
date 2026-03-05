@@ -138,7 +138,7 @@ export const siteConfig: SiteConfig = {
   hero: {
     headline: "Deine Zukunft beginnt hier.",
     subline:
-      "Mit uns startest Du Deine Weiterbildung in den gefragtesten Bereichen der digitalen Welt: Künstliche Intelligenz, Sales und Projektmanagement – praxisnah, zertifiziert.",
+      "Weiterbildung, die wirkt – mit Bildungsgutschein bis zu 100 % förderbar. Live-Unterricht, echte Projekte und Bewerbungscoaching bis zum nächsten Job.",
     ctaText: "Jetzt kostenlos beraten lassen",
     ctaHref: APPLICATION_FORM_URL,
   },
@@ -148,7 +148,7 @@ export const siteConfig: SiteConfig = {
       slug: "kuenstliche-intelligenz",
       title: "Künstliche Intelligenz",
       description:
-        "Lerne die Grundlagen und Anwendung von KI, Machine Learning und Prompt Engineering – und werde fit für die Arbeitswelt von morgen.",
+        "KI-Grundlagen, Machine Learning und Prompt Engineering – so wendest Du KI im Job sicher an und bleibst am Puls der Arbeitswelt.",
       icon: "brain",
       highlights: ["Machine Learning", "Prompt Engineering", "KI-Anwendungen"],
       searchKeywords: ["KI", "künstliche intelligenz", "machine learning", "prompt engineering", "AI", "Automatisierung", "AI & Automatisierung"],
@@ -158,7 +158,7 @@ export const siteConfig: SiteConfig = {
       slug: "it-sales",
       title: "Sales",
       description:
-        "Verkaufe IT-Lösungen und Dienstleistungen erfolgreich. Lerne Vertriebsstrategien, technisches Verständnis und Kundenberatung – für eine Karriere im IT-Vertrieb.",
+        "IT-Lösungen verkaufen, Kunden beraten, Deals abschließen. Vertriebsstrategien und technisches Verständnis – der Einstieg in den IT-Vertrieb.",
       icon: "sales",
       highlights: ["Vertriebsstrategien", "Technische Beratung", "Kundenakquise"],
       searchKeywords: ["Sales", "IT-Sales", "Vertrieb", "Verkauf", "IT Vertrieb", "IT-Vertriebsmanager", "CRM", "CRM Spezialist", "Performance Marketing", "Google Ads", "Geschäftsmodelle", "Geschäftsmodelle Unternehmen", "Unternehmen Kompetenzen"],
@@ -168,7 +168,7 @@ export const siteConfig: SiteConfig = {
       slug: "projektmanagement",
       title: "Projektmanagement",
       description:
-        "Führe Projekte zum Erfolg – mit agilen und klassischen Methoden. Ideal für den Einstieg oder die Vertiefung Deiner PM-Kompetenzen.",
+        "Projekte planen, Teams führen, Ziele erreichen. Agile und klassische Methoden – von Scrum bis zur sauberen Ablage. Einstieg oder Vertiefung.",
       icon: "target",
       highlights: ["Agiles PM (Scrum)", "Klassisches PM", "Führungskompetenzen"],
       apiCourseId: "e5ca46a1-b606-42b6-834c-23b2ead2f6d2",
@@ -179,41 +179,41 @@ export const siteConfig: SiteConfig = {
   benefits: [
     {
       title: "Du zahlst nichts",
-      description: "Die Agentur für Arbeit übernimmt Kursgebühren, Fahrtkosten und bei Bedarf Kinderbetreuung – über den Bildungsgutschein. Unsere Kurse sind AZAV-zertifiziert.",
+      description: "Bildungsgutschein der Agentur für Arbeit übernimmt Kursgebühren, Fahrtkosten und bei Bedarf Kinderbetreuung. Alle unsere Kurse sind AZAV-zertifiziert.",
       icon: "piggybank",
     },
     {
       title: "Skills, die Du sofort nutzt",
-      description: "Echte Projekte und Live-Unterricht statt trockener Theorie. Was Du lernst, wendest Du im Beruf direkt an.",
+      description: "Live-Unterricht und echte Projekte – kein reines Theorie-Paket. Was Du lernst, wendest Du im Job direkt an.",
       icon: "briefcase",
     },
     {
       title: "Online oder vor Ort",
-      description: "Lerne von zu Hause im virtuellen Klassenzimmer oder in München an unserem Standort – Du entscheidest, was zu Dir passt.",
+      description: "Virtuelles Klassenzimmer von zu Hause oder Präsenz in München. Du wählst, was zu Dir passt.",
       icon: "clock",
     },
     {
       title: "Dozent:innen aus der Praxis",
-      description: "Unsere Trainer:innen haben in KI, Vertrieb oder Projektmanagement gearbeitet und geben Dir konkretes Feedback.",
+      description: "Trainer:innen mit Berufserfahrung in KI, Vertrieb oder Projektmanagement – sie geben Dir konkretes, ehrliches Feedback.",
       icon: "users",
     },
     {
       title: "Maximal 15 Teilnehmer:innen",
-      description: "Kleine Gruppen bedeuten: mehr Zeit für Dich, ehrliches Feedback und Begleitung bis zum Abschluss.",
+      description: "Kleine Gruppen: mehr Zeit für Deine Fragen, besseres Feedback und Begleitung bis zum Abschluss.",
       icon: "usergroup",
     },
     {
       title: "Bewerbung inklusive",
-      description: "Bewerbungscoaching und Karriereberatung gehören dazu – bis Du Deinen nächsten Job hast.",
+      description: "Bewerbungscoaching und Karriereberatung inklusive – bis Du Deinen nächsten Job hast.",
       icon: "rocket",
     },
   ],
 
   cta: {
-    headline: "Bereit für den nächsten Schritt?",
+    headline: "Finde die Weiterbildung, die zu Dir passt.",
     subline:
-      "Vereinbare jetzt ein kostenloses Beratungsgespräch und finde die passende Weiterbildung für Deine Zukunft.",
-    buttonText: "Jetzt Beratungstermin vereinbaren",
+      "Kostenlose Beratung – wir prüfen Deine Fördermöglichkeiten und melden uns innerhalb von 24 Stunden. Unverbindlich.",
+    buttonText: "Jetzt kostenlos beraten lassen",
     buttonHref: APPLICATION_FORM_URL,
   },
 
@@ -252,7 +252,7 @@ export const siteConfig: SiteConfig = {
     certificates: [],
     awards: [],
     stats: [
-      { value: "60.000 €+", label: "Durchschnittliches Einstiegsgehalt in IT, Sales & PM" },
+      { value: "55.000 €+", label: "Durchschnittliches Einstiegsgehalt in IT, Sales & PM" },
       { value: "90 %", label: "unserer Absolvent:innen bei attraktiven Arbeitgebern (DAX, Hidden Champions, Tech)" },
       { value: "< 1 Monat", label: "durchschnittlich bis zum neuen Job nach der Weiterbildung" },
     ],
@@ -266,17 +266,17 @@ export const siteConfig: SiteConfig = {
     {
       question: "Kann ich online von zu Hause aus lernen?",
       answer:
-        "Ja. Wir bieten hybrides Lernen an: im virtuellen Klassenzimmer von zu Hause oder in Präsenz an unserem Standort in München. So können Sie flexibel nach Ihrem Zeitplan lernen.",
+        "Ja. Du lernst im virtuellen Klassenzimmer von zu Hause oder in Präsenz in München – flexibel nach Deinem Zeitplan.",
     },
     {
       question: "Wie läuft die kostenlose Beratung ab?",
       answer:
-        "Ganz einfach: Klicken Sie auf „Jetzt beraten lassen“ und schreiben Sie uns. Per E-Mail oder über den Kontaktbereich auf dieser Seite teilen Sie uns mit, worum es geht – ohne Telefonnummer oder Anruf. Wir melden uns zeitnah bei Ihnen, prüfen Ihre Voraussetzungen, klären Fördermöglichkeiten und finden den passenden Kurs. Die Beratung ist kostenlos und unverbindlich.",
+        "Klick auf „Jetzt beraten lassen“ und fülle das kurze Formular aus. Wir melden uns innerhalb von 24 Stunden, prüfen Deine Voraussetzungen, klären Fördermöglichkeiten und finden den passenden Kurs. Kostenlos und unverbindlich.",
     },
     {
       question: "Für wen sind die Kurse geeignet?",
       answer:
-        "Unsere Weiterbildungen richten sich an Berufseinsteiger:innen, Quereinsteiger:innen und Berufstätige, die sich in den Bereichen KI, Sales oder Projektmanagement qualifizieren möchten. Vorkenntnisse sind je nach Kurs unterschiedlich – wir beraten Sie gerne.",
+        "Für Berufseinsteiger:innen, Quereinsteiger:innen und Berufstätige, die sich in KI, Sales oder Projektmanagement qualifizieren möchten. Vorkenntnisse sind je nach Kurs unterschiedlich – wir beraten Dich gerne.",
     },
   ],
   tracking: { brand: "forward-education" },

@@ -161,7 +161,7 @@ export default async function RatgeberArticlePage({ params }: PageProps) {
             <p className="text-foreground-light mb-5 max-w-md mx-auto">
               Wir klären in einem kurzen Gespräch, welcher Kurs zu Dir passt und helfen Dir beim Bildungsgutschein.
             </p>
-            <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark">
+            <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark transition-colors">
               Kostenloses Beratungsgespräch buchen
             </TypeformLink>
             <p className="mt-3 text-xs text-foreground-light">

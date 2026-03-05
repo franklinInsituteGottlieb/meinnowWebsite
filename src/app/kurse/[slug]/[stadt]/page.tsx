@@ -78,7 +78,7 @@ export default async function KursStadtPage({ params }: PageProps) {
               In 3–6 Monaten zum Zertifikat – von {s.name} aus, komplett über den Bildungsgutschein finanziert.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark">
+              <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark transition-colors">
                 Kostenloses Beratungsgespräch buchen
               </TypeformLink>
               <span className="text-sm text-foreground-light">
@@ -244,7 +244,7 @@ export default async function KursStadtPage({ params }: PageProps) {
             <p className="text-foreground-light mb-6 max-w-lg mx-auto">
               In 15 Minuten klären wir: Passt der Kurs zu Dir? Wie bekommst Du den Bildungsgutschein? Wann kannst Du starten?
             </p>
-            <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark">
+            <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark transition-colors">
               Jetzt Termin für Beratungsgespräch buchen
             </TypeformLink>
             <p className="mt-3 text-xs text-foreground-light">

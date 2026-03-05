@@ -49,7 +49,7 @@ export default function CtaSection() {
           {siteConfig.cta.subline}
         </p>
         <div className="mt-10 flex justify-center">
-          <TypeformLink className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-lg font-semibold text-primary shadow-lg hover:bg-gray-50">
+          <TypeformLink className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-lg font-semibold text-primary shadow-lg hover:bg-slate-50 transition-colors">
             Jetzt beraten lassen
             <svg
               className="ml-2 h-5 w-5"

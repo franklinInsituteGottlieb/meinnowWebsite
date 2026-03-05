@@ -39,7 +39,7 @@ export default function StandorteOverview() {
               Egal wo Du wohnst – unsere Weiterbildungen in KI, Sales und Projektmanagement sind online verfügbar und werden von der Agentur für Arbeit finanziert.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark">
+              <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark transition-colors">
                 Kostenlos beraten lassen
               </TypeformLink>
               <span className="text-sm text-foreground-light">

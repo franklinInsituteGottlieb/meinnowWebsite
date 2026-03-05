@@ -81,7 +81,7 @@ export default async function StandortPage({ params }: PageProps) {
               {s.intro}
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark">
+              <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark transition-colors">
                 Kostenlos beraten lassen
               </TypeformLink>
               <span className="text-sm text-foreground-light">
@@ -238,12 +238,12 @@ export default async function StandortPage({ params }: PageProps) {
           {/* CTA */}
           <section className="text-center rounded-2xl bg-white shadow-lg border border-slate-200 p-10">
             <h2 className="text-2xl font-bold text-foreground mb-3">
-              Bereit für den nächsten Schritt?
+              Worauf wartest Du?
             </h2>
             <p className="text-foreground-light mb-6 max-w-lg mx-auto">
               In einem kurzen Gespräch klären wir, welcher Kurs zu Dir passt und wie Du den Bildungsgutschein bekommst.
             </p>
-            <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark">
+            <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark transition-colors">
               Kostenloses Beratungsgespräch buchen
             </TypeformLink>
             <p className="mt-3 text-xs text-foreground-light">

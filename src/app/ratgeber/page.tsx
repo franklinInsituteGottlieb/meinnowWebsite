@@ -78,7 +78,7 @@ export default function RatgeberOverview() {
             <p className="text-foreground-light mb-6 max-w-lg mx-auto">
               Wir beraten Dich kostenlos zu Kursen, Bildungsgutschein und Deinen Möglichkeiten.
             </p>
-            <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark">
+            <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark transition-colors">
               Kostenlos beraten lassen
             </TypeformLink>
           </section>

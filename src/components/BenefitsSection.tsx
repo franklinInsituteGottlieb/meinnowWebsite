@@ -1,4 +1,5 @@
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import TypeformLink from "@/components/TypeformLink";
 import { siteConfig } from "@/config/site.config";
 
 function BenefitIcon({ icon }: { icon: string }) {
@@ -86,6 +87,11 @@ export default function BenefitsSection() {
                     </div>
                   </div>
                 ))}
+              </div>
+              <div className="mt-10 flex justify-center">
+                <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark transition-colors">
+                  Jetzt beraten lassen
+                </TypeformLink>
               </div>
             </div>
           </div>

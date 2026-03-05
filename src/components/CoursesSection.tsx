@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import TypeformLink from "@/components/TypeformLink";
 import { siteConfig } from "@/config/site.config";
 
 const COURSE_IMAGES: Record<string, { src: string; alt: string }> = {
@@ -113,17 +114,9 @@ export default function CoursesSection() {
 
         {/* CTA */}
         <div className="mt-12 text-center">
-          <Link
-            href={siteConfig.hero.ctaHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors"
-          >
+          <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark transition-colors">
             Jetzt beraten lassen
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </Link>
+          </TypeformLink>
         </div>
       </div>
     </section>

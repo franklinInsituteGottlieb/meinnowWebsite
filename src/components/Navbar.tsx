@@ -8,6 +8,12 @@ import { siteConfig } from "@/config/site.config";
 import { featuredStandorte } from "@/config/standorte.config";
 import TypeformLink from "@/components/TypeformLink";
 
+/** Größte 5 Städte im Dropdown (Reihenfolge: München, Hamburg, Berlin, Köln, Frankfurt) */
+const HEADER_STANDORTE_SLUGS = ["muenchen", "hamburg", "berlin", "koeln", "frankfurt"];
+const headerStandorte = HEADER_STANDORTE_SLUGS.map((slug) =>
+  featuredStandorte.find((s) => s.slug === slug)
+).filter(Boolean) as typeof featuredStandorte;
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [standorteOpen, setStandorteOpen] = useState(false);
@@ -99,23 +105,24 @@ export default function Navbar() {
                     {standorteOpen && (
                       <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 pt-2">
                         <div className="rounded-2xl bg-white shadow-lg border border-slate-200 py-2 min-w-[200px]">
-                          {featuredStandorte.map((s) => (
+                          {headerStandorte.map((s) => (
                             <Link
                               key={s.slug}
                               href={`/standorte/${s.slug}`}
                               onClick={() => setStandorteOpen(false)}
-                              className="block px-4 py-2 text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary"
+                              className="block px-4 py-2 text-sm font-medium text-foreground hover:bg-slate-50 hover:text-foreground"
                             >
                               {s.name}
                             </Link>
                           ))}
-                          <div className="border-t border-slate-100 mt-2 pt-2">
-                            <TypeformLink
+                          <div className="border-t border-slate-100 mt-1 pt-1">
+                            <Link
+                              href="/standorte"
                               onClick={() => setStandorteOpen(false)}
-                              className="block px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/10"
+                              className="block px-4 py-2 text-sm font-medium text-slate-500 hover:text-slate-700 hover:bg-slate-50"
                             >
-                              Jetzt beraten lassen →
-                            </TypeformLink>
+                              Alle anzeigen
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -154,7 +161,7 @@ export default function Navbar() {
 
           {/* CTA – wie Hero-Button (rounded-full, gleicher Schatten) */}
           <div className="hidden md:flex items-center shrink-0">
-            <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-[15px] font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark">
+            <TypeformLink className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-[15px] font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark transition-colors">
               {siteConfig.nav.ctaText}
             </TypeformLink>
           </div>
@@ -205,23 +212,24 @@ export default function Navbar() {
                       </svg>
                     </button>
                     {mobileStandorteOpen && (
-                      <div className="pl-4 mt-1 space-y-0.5 border-l-2 border-primary/30 ml-4">
-                        {featuredStandorte.map((s) => (
+                      <div className="pl-4 mt-1 space-y-0.5 border-l-2 border-slate-200 ml-4">
+                        {headerStandorte.map((s) => (
                           <Link
                             key={s.slug}
                             href={`/standorte/${s.slug}`}
                             onClick={() => setMobileOpen(false)}
-                            className="block py-2 text-base font-medium text-foreground hover:text-primary"
+                            className="block py-2 text-base font-medium text-foreground hover:text-foreground"
                           >
                             {s.name}
                           </Link>
                         ))}
-                        <TypeformLink
+                        <Link
+                          href="/standorte"
                           onClick={() => setMobileOpen(false)}
-                          className="block py-2 text-base font-semibold text-primary"
+                          className="block py-2 text-base font-medium text-slate-500 hover:text-slate-700"
                         >
-                          Jetzt beraten lassen →
-                        </TypeformLink>
+                          Alle anzeigen
+                        </Link>
                       </div>
                     )}
                   </div>
@@ -256,7 +264,7 @@ export default function Navbar() {
               );
             })}
             <TypeformLink
-              className="mt-2 block w-full text-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark"
+              className="mt-2 block w-full text-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-dark transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               {siteConfig.nav.ctaText}
