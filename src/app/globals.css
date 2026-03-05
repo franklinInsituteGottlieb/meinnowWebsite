@@ -140,3 +140,17 @@ h1, h2, h3, h4, h5, h6 {
     rgba(255, 255, 255, 0.98) 100%
   );
 }
+
+/* Company-Logos-Karussell: von rechts nach links */
+@keyframes company-logos-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.company-logos-track {
+  animation: company-logos-scroll 35s linear infinite;
+}

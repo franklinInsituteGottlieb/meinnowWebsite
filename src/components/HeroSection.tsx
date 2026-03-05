@@ -2,6 +2,7 @@
 
 import { siteConfig } from "@/config/site.config";
 import TypeformLink from "@/components/TypeformLink";
+import CompanyLogosCarousel from "@/components/CompanyLogosCarousel";
 
 export default function HeroSection() {
   return (
@@ -73,6 +74,8 @@ export default function HeroSection() {
             <span>450+ Google-Bewertungen</span>
           </p>
         </div>
+
+        <CompanyLogosCarousel />
       </div>
     </section>
   );
