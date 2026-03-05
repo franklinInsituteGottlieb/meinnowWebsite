@@ -97,25 +97,30 @@ export default async function KursStandortPage({ params }: PageProps) {
 
           {/* Kursinhalte */}
           {detail && (
-            <section className="mb-16">
+            <section id="inhalt" className="mb-16 scroll-mt-28">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-2">
+                Lerninhalte
+              </p>
               <h2 className="text-2xl font-bold text-foreground mb-2">Was Du mitnimmst</h2>
               <p className="text-foreground-light mb-6 max-w-2xl">
-                Konkrete Skills, die Du im Beruf sofort anwenden kannst – mit Live-Unterricht und echten Projekten, keine Theorie ohne Praxis.
+                Konkrete Skills, die Du im Beruf sofort anwenden kannst – mit Live-Unterricht und echten Projekten.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {detail.contentSections.map((section, i) => (
                   <div
                     key={i}
-                    className="rounded-2xl bg-white shadow-md border border-slate-200 p-6"
+                    className="rounded-2xl bg-white shadow-md border border-slate-200 overflow-hidden"
                   >
-                    <h3 className="font-bold text-foreground mb-3">{section.title}</h3>
-                    <ul className="space-y-2">
+                    <div className="bg-slate-50/80 border-b border-slate-200/80 px-6 py-4">
+                      <h3 className="text-lg font-semibold text-foreground">
+                        {i + 1}. {section.title}
+                      </h3>
+                    </div>
+                    <ul className="px-6 py-5 space-y-3 text-foreground-light leading-relaxed">
                       {section.items.map((item, j) => (
-                        <li key={j} className="text-sm text-foreground-light flex items-start gap-2.5">
-                          <svg className="h-4 w-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                          </svg>
-                          {item}
+                        <li key={j} className="flex items-start gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                          <span>{item}</span>
                         </li>
                       ))}
                     </ul>

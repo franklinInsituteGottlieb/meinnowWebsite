@@ -155,15 +155,27 @@ export default async function CourseByIdPage({ searchParams }: PageProps) {
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-4 pb-20">
           <section id="inhalt" className="mb-20 scroll-mt-28">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Deine Lerninhalte im Überblick</h2>
-            <div className="rounded-2xl bg-white shadow-lg border border-slate-200 overflow-hidden">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-2">
+              Lerninhalte
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
+              Deine Lerninhalte im Überblick
+            </h2>
+            <p className="text-foreground-light mb-8 max-w-2xl">
+              Modul für Modul: Was Du in der Weiterbildung lernst – praxisnah und direkt anwendbar.
+            </p>
+            <div className="space-y-5">
               {contentSections.map((section, i) => (
                 <div
                   key={section.title}
-                  className={i > 0 ? "border-t border-slate-200/60 px-6 py-6 sm:px-8 sm:py-7" : "px-6 py-6 sm:px-8 sm:py-7"}
+                  className="rounded-2xl bg-white shadow-md border border-slate-200 overflow-hidden"
                 >
-                  <h3 className="text-base font-semibold text-foreground mb-3 sm:mb-4">{section.title}</h3>
-                  <ul className="space-y-2.5 text-foreground-light leading-relaxed">
+                  <div className="bg-slate-50/80 border-b border-slate-200/80 px-6 py-4 sm:px-8">
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {i + 1}. {section.title}
+                    </h3>
+                  </div>
+                  <ul className="px-6 py-5 sm:px-8 sm:py-6 space-y-3 text-foreground-light leading-relaxed">
                     {section.items.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBackground from "@/components/PageBackground";
@@ -9,6 +10,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/schema/JsonLd";
 import { siteConfig } from "@/config/site.config";
 import { ratgeberArticles, ratgeberCategories, RatgeberArticle } from "@/config/ratgeber.config";
+
+/** Ersetzt **text** durch fett dargestellten Inhalt (für Absätze, Überschriften, Listen). */
+function renderWithBold(text: string): React.ReactNode {
+  const parts = text.split(/(\*\*.+?\*\*)/g);
+  return parts.map((part, i) => {
+    const m = part.match(/^\*\*(.+)\*\*$/);
+    if (m) return <strong key={i} className="font-semibold text-foreground">{m[1]}</strong>;
+    return part;
+  });
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -85,21 +96,21 @@ export default async function RatgeberArticlePage({ params }: PageProps) {
             <div className="space-y-1 text-foreground-light leading-relaxed">
               {article.content.split("\n").map((line, i) => {
                 if (line.startsWith("### "))
-                  return <h3 key={i} className="text-lg font-semibold text-foreground mt-6 mb-3">{line.replace("### ", "")}</h3>;
+                  return <h3 key={i} className="text-lg font-semibold text-foreground mt-6 mb-3">{renderWithBold(line.replace("### ", ""))}</h3>;
                 if (line.startsWith("## "))
-                  return <h2 key={i} className="text-xl font-bold text-foreground mt-8 mb-4">{line.replace("## ", "")}</h2>;
+                  return <h2 key={i} className="text-xl font-bold text-foreground mt-8 mb-4">{renderWithBold(line.replace("## ", ""))}</h2>;
                 if (line.startsWith("- **"))
                   return (
                     <div key={i} className="flex gap-2.5 ml-1 py-0.5">
                       <span className="text-primary shrink-0 mt-0.5">•</span>
-                      <span dangerouslySetInnerHTML={{ __html: line.replace("- ", "").replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') }} />
+                      <span>{renderWithBold(line.replace("- ", ""))}</span>
                     </div>
                   );
                 if (line.startsWith("- "))
                   return (
                     <div key={i} className="flex gap-2.5 ml-1 py-0.5">
                       <span className="text-primary shrink-0 mt-0.5">•</span>
-                      <span>{line.replace("- ", "")}</span>
+                      <span>{renderWithBold(line.replace("- ", ""))}</span>
                     </div>
                   );
                 if (line.startsWith("| ")) {
@@ -109,7 +120,7 @@ export default async function RatgeberArticlePage({ params }: PageProps) {
                     <div key={i} className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm border-b border-slate-100 py-2">
                       {cells.map((cell, j) => (
                         <span key={j} className={j === 0 ? "font-medium text-foreground" : ""}>
-                          {cell}
+                          {renderWithBold(cell)}
                         </span>
                       ))}
                     </div>
@@ -121,11 +132,11 @@ export default async function RatgeberArticlePage({ params }: PageProps) {
                       <span className="text-primary font-bold shrink-0 mt-0.5">
                         {line.match(/^(\d+)\./)?.[1]}.
                       </span>
-                      <span dangerouslySetInnerHTML={{ __html: line.replace(/^\d+\.\s*/, "").replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') }} />
+                      <span>{renderWithBold(line.replace(/^\d+\.\s*/, ""))}</span>
                     </div>
                   );
                 if (line.trim() === "") return <div key={i} className="h-4" />;
-                return <p key={i} className="py-0.5">{line}</p>;
+                return <p key={i} className="py-0.5">{renderWithBold(line)}</p>;
               })}
             </div>
           </article>
