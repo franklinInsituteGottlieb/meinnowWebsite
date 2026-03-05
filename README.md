@@ -1,5 +1,18 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Sitemap & Indexierung
+
+Die Sitemap wird phasenweise gesteuert (Env: `SITEMAP_PHASE`), damit Google zuerst die wichtigsten Seiten indexiert.
+
+| Phase | URLs | Inhalt |
+|-------|------|--------|
+| **1** (empfohlen zum Start) | ~115 | Startseite, 3 Kurse, alle Ratgeber, Kosten, Impressum, Top-12 Standorte + deren Kurs-Kombis |
+| **2** | ~450 | + alle Standort-Seiten + Arbeitsagentur-Seiten |
+| **3** | ~1.650 | + alle Kombinations-Seiten (vollständig) |
+
+- **Aktuell:** `SITEMAP_PHASE=1` in `.env.local` → nur ~115 URLs in `/sitemap.xml`. Nach Indexierung Phase 2, dann 3 hochschalten.
+- Details: [docs/README.md](docs/README.md) (Indexierungs-Strategie)
+
 ## Getting Started
 
 First, run the development server:
