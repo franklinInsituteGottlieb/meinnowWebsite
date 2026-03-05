@@ -1014,4 +1014,119 @@ Du kannst einen Bildungsgutschein erhalten, wenn:
 
 Kontaktiere uns für eine kostenlose Beratung. Wir helfen Dir bei der Vorbereitung auf das Gespräch mit der Agentur für Arbeit und stellen Dir alle nötigen Unterlagen bereit.`,
   },
+
+  // ─── mein NOW (Nationales Portal für berufliche Weiterbildung) ─────────────
+
+  {
+    slug: "was-ist-mein-now",
+    title: "Was ist mein NOW? – Das Portal für berufliche Weiterbildung",
+    description:
+      "mein NOW ist das nationale Onlineportal der Bundesagentur für Arbeit für Weiterbildung. Erfahre, was es bietet und wie Du es nutzt.",
+    category: "weiterbildung",
+    content: `## Was ist mein NOW?
+
+**mein NOW** (Schreibweise: „mein NOW") ist das **Nationale Onlineportal für berufliche Weiterbildung** in Deutschland. Es wurde von der Bundesagentur für Arbeit im Rahmen der Nationalen Weiterbildungsstrategie entwickelt und ist seit dem 1. Januar 2024 online. Das Portal bündelt Beratung, Förderungen, Kurse und Tests an einem Ort – für alle, die sich weiterbilden möchten.
+
+## Für wen ist mein NOW?
+
+- **Privatpersonen**, die eine Weiterbildung, Umschulung oder Teilqualifizierung suchen
+- **Arbeitgeber**, die sich über Qualifizierung ihrer Mitarbeiter:innen informieren wollen
+- **Weiterbildungsanbieter**, die ihr Angebot sichtbar machen
+
+Du findest dort einen niedrigschwelligen Einstieg: Kein Vorwissen nötig, alles von Beratung bis Kursbuchung an einem Ort.
+
+## Die fünf Bereiche von mein NOW
+
+### 1. Beratung
+Übersicht von Beratungsstellen zu Weiterbildung, Umschulung und Teilqualifizierung – in Deiner Nähe oder online.
+
+### 2. Förderungen
+Navigator für finanzielle Unterstützung: Bildungsgutschein, Bildungsurlaub, Aufstiegs-BAFöG und weitere Fördermöglichkeiten. Du siehst schnell, was auf Dich zutreffen könnte.
+
+### 3. Weiterbildungen
+Große Datenbank mit bundesweiten Weiterbildungsangeboten – Voll- oder Teilzeit, vor Ort oder online. Du kannst nach Thema, Ort und Format filtern.
+
+### 4. Online-Tests
+Tests zur Orientierung: Welche Weiterbildung passt zu Dir? Wie stehen Deine digitalen Kompetenzen? Die Ergebnisse helfen Dir bei der Entscheidung.
+
+### 5. Perspektiven
+Informationen zu Berufen, Branchen, Verdienst und Weiterbildungsmöglichkeiten. So siehst Du, wohin eine Qualifizierung führen kann.
+
+## mein NOW und Forward Education
+
+Unsere Kurse in Künstlicher Intelligenz, Sales und Projektmanagement sind AZAV-zertifiziert und mit dem Bildungsgutschein förderbar – genau die Art von Angeboten, die Du auch über mein NOW findest. Wenn Du über mein NOW auf uns kommst oder Dich parallel dort informierst: Wir beraten Dich kostenlos zu Deinem passenden Kurs und zu Fördermöglichkeiten.`,
+  },
+  {
+    slug: "weiterbildung-finden-mein-now",
+    title: "Weiterbildung finden mit mein NOW – So nutzt Du das Portal",
+    description:
+      "Schritt für Schritt: So findest Du mit mein NOW die passende Weiterbildung, prüfst Förderungen und startest Deine Qualifizierung.",
+    category: "weiterbildung",
+    content: `## Weiterbildung finden mit mein NOW: So gehst Du vor
+
+mein NOW bringt Beratung, Förderung und Kurssuche an einen Ort. So nutzt Du das Portal effektiv.
+
+## Schritt 1: Perspektiven und Tests (optional)
+
+Bevor Du Kurse filterst, kannst Du Dich orientieren:
+- **Perspektiven** – Welche Berufe und Branchen passen zu Dir? Welche Weiterbildungen führen dorthin?
+- **Online-Tests** – Welche Weiterbildung passt zu Deinen Zielen? Wie ausgeprägt sind Deine digitalen Kompetenzen?
+
+Das hilft Dir, klarer zu formulieren, was Du suchst.
+
+## Schritt 2: Förderung prüfen
+
+Unter **Förderungen** findest Du den Überblick: Bildungsgutschein, Bildungsurlaub, Aufstiegs-BAFöG und mehr. Du siehst, welche Unterstützung für Dich infrage kommt. Der Bildungsgutschein der Agentur für Arbeit ist die häufigste Förderung für Arbeitssuchende und von Arbeitslosigkeit Bedrohte – bis zu 100 % der Kosten einer AZAV-zertifizierten Weiterbildung.
+
+## Schritt 3: Kurse suchen
+
+Unter **Weiterbildungen** suchst Du nach Thema, Ort, Voll- oder Teilzeit und ob online oder vor Ort. Die Suche zeigt Dir zugelassene Anbieter und Kurse. Wichtig: Nur **AZAV-zertifizierte** Angebote sind mit dem Bildungsgutschein förderbar. Das steht bei den Kursen in der Regel dabei.
+
+## Schritt 4: Beratung nutzen
+
+Wenn Du unsicher bist oder Förderung beantragen willst, führt an der **Beratung** kein Weg vorbei. Das Portal verweist auf Beratungsstellen in Deiner Nähe – oft Agentur für Arbeit oder Jobcenter. Dort besprichst Du Deinen Wunsch und beantragst bei Bedarf den Bildungsgutschein.
+
+## Tipp für die Praxis
+
+Nutze mein NOW als Einstieg, und hole Dir danach eine **konkrete Beratung** bei einem Bildungsträger. Wir bei Forward Education beraten Dich kostenlos: Welcher Kurs passt zu Dir, welche Förderung kommt infrage und wie Du das Gespräch mit der Agentur für Arbeit vorbereitest.`,
+  },
+  {
+    slug: "mein-now-bildungsgutschein-foerderung",
+    title: "mein NOW und Bildungsgutschein – Förderung finden und nutzen",
+    description:
+      "So findest Du mit mein NOW die richtige Förderung für Deine Weiterbildung und was Du beim Bildungsgutschein beachten solltest.",
+    category: "foerderung",
+    content: `## mein NOW und Bildungsgutschein: So hängt es zusammen
+
+mein NOW ist das nationale Portal der Bundesagentur für Arbeit für berufliche Weiterbildung. Dort findest Du nicht nur Kurse, sondern auch einen **Förder-Navigator**: Du siehst, welche finanziellen Hilfen es gibt – unter anderem den Bildungsgutschein.
+
+## Förderungen auf mein NOW finden
+
+Im Bereich **Förderungen** siehst Du auf einen Blick:
+- **Bildungsgutschein** – Kostenübernahme durch die Agentur für Arbeit für AZAV-zertifizierte Weiterbildungen (bis zu 100 %)
+- **Bildungsurlaub** – bezahlte Freistellung für Weiterbildung (landesrechtlich geregelt)
+- **Aufstiegs-BAFöG** – Förderung für Fortbildungen z. B. zum/zur Meister:in oder Fachwirt:in
+- Weitere Programme je nach Bundesland und Zielgruppe
+
+Du filterst nach Deiner Situation (z. B. arbeitslos, beschäftigt) und bekommst Hinweise, was für Dich infrage kommt.
+
+## Bildungsgutschein: Das Wichtigste
+
+Der Bildungsgutschein ist die zentrale Förderung für viele unserer Teilnehmer:innen. Wichtig zu wissen:
+- **Kein Rechtsanspruch** – die Agentur für Arbeit entscheidet nach Beratung
+- **Beratungsgespräch nötig** – nur danach wird ein Gutschein ausgestellt
+- **Nur AZAV-zertifizierte Kurse** – der Anbieter und die Maßnahme müssen zertifiziert sein
+- **Kosten** – Lehrgangsgebühren, Fahrt, Kinderbetreuung und ggf. Unterkunft können übernommen werden
+
+mein NOW hilft Dir, diese Förderung zu finden. Den Antrag stellst Du dann im Gespräch mit Deiner Agentur für Arbeit oder Deinem Jobcenter.
+
+## Nach der Förder-Suche: Konkret werden
+
+Wenn Du über mein NOW siehst, dass der Bildungsgutschein für Dich infrage kommt, solltest Du:
+1. **Beratung buchen** – über mein NOW oder direkt bei der Agentur für Arbeit
+2. **Konkretes Kursangebot besorgen** – z. B. von einem AZAV-zertifizierten Anbieter wie Forward Education
+3. **Unterlagen für die Agentur vorbereiten** – wir stellen Dir alle nötigen Nachweise und Infos für das Beratungsgespräch bereit
+
+So verbindest Du das Portal mit dem nächsten Schritt: Beratung und Antrag.`,
+  },
 ];

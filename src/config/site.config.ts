@@ -259,6 +259,11 @@ export const siteConfig: SiteConfig = {
   },
   faq: [
     {
+      question: "Ist Forward Education Institute GmbH seriös?",
+      answer:
+        "Ja. Forward Education ist ein eingetragenes Unternehmen (GmbH) mit Sitz in München, vollem Impressum und klaren rechtlichen Angaben. Unsere Weiterbildungen sind AZAV-zertifiziert und damit mit dem Bildungsgutschein der Agentur für Arbeit förderbar. Wir arbeiten mit anerkannten Partnern zusammen, und unsere Absolvent:innen starten bei namhaften Arbeitgebern. Seriosität und Transparenz sind uns wichtig – bei Fragen erreichst Du uns jederzeit.",
+    },
+    {
       question: "Wer übernimmt die Kosten für die Weiterbildung?",
       answer:
         "Unsere Kurse sind AZAV-zertifiziert. Mit dem Bildungsgutschein der Agentur für Arbeit können bis zu 100 % der Kosten übernommen werden. Wir beraten Dich gerne zu Deinen Fördermöglichkeiten.",
